@@ -90,9 +90,9 @@
 
   /* tabs */
   .tabs { display: flex; background: var(--card); border-radius: 12px; padding: 3px; margin-bottom: 12px; position: sticky; top: 8px; z-index: 2; box-shadow: 0 0 0 8px var(--bg); }
-  .tabs button { flex: 1; padding: 8px 4px; border-radius: 9px; font-weight: 600; font-size: 14px; color: var(--hint); position: relative; }
+  .tabs button { flex: 1; padding: 8px 2px; border-radius: 9px; font-weight: 600; font-size: 13px; color: var(--hint); position: relative; white-space: nowrap; }
   .tabs button.on { background: var(--accent); color: var(--accent-text); }
-  .dot { display: inline-block; min-width: 18px; padding: 0 5px; height: 18px; line-height: 18px; border-radius: 9px; font-size: 11px; background: var(--danger); color: #fff; margin-left: 4px; vertical-align: 1px; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--danger); margin-left: 4px; vertical-align: 2px; }
 
   /* lists */
   .list { background: var(--card); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
@@ -143,6 +143,80 @@
 
   .center { min-height: 70vh; display: grid; place-items: center; text-align: center; color: var(--hint); }
   .loader { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--card); border-top-color: var(--accent); animation: rot .8s linear infinite; margin: 0 auto 12px; }
+  /* payments */
+  .paycard { display: flex; align-items: center; gap: 12px; }
+  .paycard .ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 20px; flex: none; }
+  .paycard .main { flex: 1; min-width: 0; }
+  .paycard .k { font-size: 12px; color: var(--hint); }
+  .paycard .amt { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .paycard .when { font-size: 13px; color: var(--hint); }
+  .paycard.over { box-shadow: inset 0 0 0 2px var(--bad); }
+  .admin { display: flex; align-items: center; gap: 10px; background: var(--info-bg); border-radius: 12px; padding: 10px 12px; font-size: 13px; margin-bottom: 12px; }
+  .admin span { flex: 1; }
+  .admin button { color: var(--link); font-weight: 600; font-size: 13px; }
+  /* staff + forms */
+  .modes { display: flex; background: var(--card); border-radius: 10px; padding: 2px; }
+  .modes button { padding: 4px 9px; font-size: 12px; font-weight: 600; color: var(--hint); border-radius: 8px; white-space: nowrap; }
+  .modes button.on { background: var(--accent); color: var(--accent-text); }
+  .back { color: var(--link); font-weight: 600; font-size: 15px; padding: 4px 0 10px; display: inline-flex; gap: 4px; }
+  .h1 { font-size: 21px; font-weight: 700; margin: 2px 0 2px; }
+  .sub { color: var(--hint); font-size: 13px; margin-bottom: 12px; }
+  .sec { font-size: 12px; font-weight: 700; color: var(--hint); text-transform: uppercase; letter-spacing: .04em; margin: 18px 4px 8px; display: flex; align-items: center; justify-content: space-between; }
+  .sec button { color: var(--link); font-size: 13px; font-weight: 600; text-transform: none; letter-spacing: 0; }
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+  .kpi { background: var(--card); border-radius: 14px; padding: 10px; }
+  .kpi .n { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .kpi .l { font-size: 11.5px; color: var(--hint); margin-top: 2px; line-height: 1.25; }
+  .kpi.alert .n { color: var(--bad); }
+  .navgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
+  .navgrid button { background: var(--card); border-radius: 14px; padding: 14px 12px; text-align: left; font-weight: 600; font-size: 15px; position: relative; }
+  .navgrid button .e { font-size: 20px; display: block; margin-bottom: 4px; }
+  .navgrid .cnt { position: absolute; top: 10px; right: 10px; background: var(--danger); color: #fff; font-size: 11px; font-weight: 700; border-radius: 9px; min-width: 18px; height: 18px; line-height: 18px; text-align: center; padding: 0 5px; }
+  .row.tap { cursor: pointer; }
+  .row .chev { color: var(--hint); flex: none; align-self: center; }
+  .pills { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 13px; font-weight: 600; margin: 0 2px 5px; }
+  .field label i { color: var(--danger); font-style: normal; }
+  .field .hint { font-size: 12px; margin: 4px 2px 0; }
+  .inp, .sel, .txt { width: 100%; padding: 11px 12px; font: inherit; color: var(--text); background: var(--card); border: 1.5px solid transparent; border-radius: 12px; outline: none; }
+  .inp:focus, .sel:focus, .txt:focus { border-color: var(--accent); }
+  .bad .inp, .bad .sel, .bad .txt, .bad .chips, .bad .seg2 { border-color: var(--danger) !important; }
+  .bad label { color: var(--danger); }
+  .txt { min-height: 84px; resize: vertical; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; border: 1.5px solid transparent; border-radius: 12px; }
+  .chips button { padding: 8px 12px; border-radius: 999px; background: var(--card); font-size: 14px; font-weight: 500; }
+  .chips button.on { background: var(--accent); color: var(--accent-text); }
+  .seg2 { display: flex; background: var(--card); border-radius: 12px; padding: 3px; border: 1.5px solid transparent; }
+  .seg2 button { flex: 1; padding: 9px 4px; border-radius: 9px; font-weight: 600; font-size: 14px; color: var(--hint); }
+  .seg2 button.on { background: var(--accent); color: var(--accent-text); }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; background: var(--card); padding: 12px; border-radius: 12px; border: 1.5px solid transparent; }
+  .check input { width: 20px; height: 20px; margin: 1px 0 0; flex: none; accent-color: var(--accent); }
+  .field label.check { font-weight: 400; margin: 0; }
+  .bad .check { border-color: var(--danger); }
+  .formgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+  .stu { padding: 12px 14px; }
+  .stu .top2 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .stu .nm { font-weight: 700; }
+  .att { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 8px; }
+  .att button { padding: 9px 2px; border-radius: 10px; background: var(--bg); font-size: 12.5px; font-weight: 700; color: var(--hint); }
+  .att button.on.present { background: var(--good-bg); color: var(--good); box-shadow: inset 0 0 0 1.5px var(--good); }
+  .att button.on.late { background: var(--mid-bg); color: var(--mid); box-shadow: inset 0 0 0 1.5px var(--mid); }
+  .att button.on.absent { background: var(--bad-bg); color: var(--bad); box-shadow: inset 0 0 0 1.5px var(--bad); }
+  .att button.on.excused { background: var(--info-bg); color: var(--info); box-shadow: inset 0 0 0 1.5px var(--info); }
+  .nums3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6px; }
+  .nums3 .inp, .stu .inp { padding: 9px 10px; background: var(--bg); font-size: 15px; }
+  .mini { font-size: 11px; color: var(--hint); margin: 0 2px 3px; font-weight: 600; }
+  .savebar { position: sticky; bottom: 0; padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); background: linear-gradient(to top, var(--bg) 70%, transparent); margin-top: 8px; }
+  .kv { display: grid; grid-template-columns: 38% 1fr; gap: 8px 10px; font-size: 14px; }
+  .kv .k { color: var(--hint); }
+  .kv a { color: var(--link); text-decoration: none; }
+  .divider { display: flex; align-items: center; gap: 10px; color: var(--hint); font-size: 13px; margin: 22px 0 12px; }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--sep); }
+  .okbox { text-align: center; padding: 28px 16px; }
+  .okbox .big { font-size: 46px; }
+  .code-chip { font: 700 16px ui-monospace, Menlo, Consolas, monospace; letter-spacing: .12em; background: var(--bg); padding: 4px 10px; border-radius: 8px; }
+  .spinwrap { padding: 40px 0; text-align: center; color: var(--hint); }
   /* lessons */
   .lesson .when { font-weight: 600; }
   .lesson .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; align-items: center; }
@@ -193,8 +267,13 @@ const T = {
     hwShort: 'HW', markShort: 'Mark', attShort: 'Attend.', month: 'Month', byMonth: 'Progress by month', markLine: 'Mark', hwLine: 'Homework', attLine: 'Attendance',
     schoolNote: 'Note from the school', addChild: 'Add another child',
     remove: 'Remove {name} from this app', removeConfirm: 'Remove {name}? You can connect again later with the access code.',
-    demo: "Demo mode — open the app from the school's Telegram bot to see real data. Try codes K7M2QX or J6RV2T.",
-    paused: 'Paused', finished: 'Finished', active: 'Active', forGroup: 'For {group}'
+    demo: "Demo mode — open the app from the school's Telegram bot to see real data. Try codes K7M2QX or J6RV2T (parents), TEACH1 (teacher), ADMIN1 (admin).",
+    paused: 'Paused', finished: 'Finished', active: 'Active', forGroup: 'For {group}',
+    payments: 'Payments', nextPayment: 'Next payment', allPaid: 'All payments are up to date', currency: 'UZS',
+    dueIn: 'due in {n} days', dueIn1: 'due tomorrow', due_today: 'due today', overdueBy: '{n} days late', paidOn: 'paid {date}',
+    st_paid: 'Paid', st_overdue: 'Overdue', st_due_today: 'Due today', st_due_soon: 'Due soon', st_upcoming: 'Upcoming',
+    noPayments: 'No payments yet.', payNote: 'Questions about payments? Contact the school.',
+    adminOn: 'You get the daily payment summary.', adminOff: 'Turn off', adminLinked: 'Done! You will get the payment summary every morning.'
   },
   ru: {
     connectTitle: 'Подключите ребёнка', connectText: 'Введите код доступа, который вы получили в школе.',
@@ -211,8 +290,13 @@ const T = {
     hwShort: 'ДЗ', markShort: 'Оценка', attShort: 'Посещ.', month: 'Месяц', byMonth: 'Прогресс по месяцам', markLine: 'Оценка', hwLine: 'ДЗ', attLine: 'Посещаемость',
     schoolNote: 'Комментарий школы', addChild: 'Добавить ещё ребёнка',
     remove: 'Убрать из приложения: {name}', removeConfirm: 'Убрать {name} из приложения? Подключить снова можно по коду доступа.',
-    demo: 'Демо-режим — откройте приложение через Telegram-бота школы, чтобы увидеть реальные данные. Коды для проверки: K7M2QX, J6RV2T.',
-    paused: 'Пауза', finished: 'Окончил(а)', active: 'Учится', forGroup: 'Для группы {group}'
+    demo: 'Демо-режим — откройте приложение через Telegram-бота школы, чтобы увидеть реальные данные. Коды: K7M2QX, J6RV2T (родители), TEACH1 (учитель), ADMIN1 (админ).',
+    paused: 'Пауза', finished: 'Окончил(а)', active: 'Учится', forGroup: 'Для группы {group}',
+    payments: 'Оплата', nextPayment: 'Следующая оплата', allPaid: 'Все оплаты внесены', currency: 'сум',
+    dueIn: 'через {n} дн.', dueIn1: 'завтра', due_today: 'сегодня', overdueBy: 'просрочено на {n} дн.', paidOn: 'оплачено {date}',
+    st_paid: 'Оплачено', st_overdue: 'Просрочено', st_due_today: 'Сегодня', st_due_soon: 'Скоро', st_upcoming: 'Предстоит',
+    noPayments: 'Оплат пока нет.', payNote: 'Вопросы по оплате? Свяжитесь со школой.',
+    adminOn: 'Вы получаете ежедневную сводку по оплатам.', adminOff: 'Отключить', adminLinked: 'Готово! Сводка по оплатам будет приходить каждое утро.'
   },
   uz: {
     connectTitle: 'Farzandingizni ulang', connectText: 'Maktabdan olgan kirish kodingizni kiriting.',
@@ -229,10 +313,148 @@ const T = {
     hwShort: 'UV', markShort: 'Baho', attShort: 'Davomat', month: 'Oy', byMonth: 'Oylar bo\'yicha natijalar', markLine: 'Baho', hwLine: 'Uy vazifasi', attLine: 'Davomat',
     schoolNote: 'Maktabdan izoh', addChild: "Yana bir farzandni qo'shish",
     remove: 'Ilovadan olib tashlash: {name}', removeConfirm: "{name} ilovadan olib tashlansinmi? Keyinroq kirish kodi bilan qayta ulashingiz mumkin.",
-    demo: "Demo rejim — haqiqiy ma'lumotlarni ko'rish uchun ilovani maktabning Telegram botidan oching. Sinov kodlari: K7M2QX, J6RV2T.",
-    paused: "To'xtatilgan", finished: 'Tugatgan', active: 'Faol', forGroup: '{group} guruhi uchun'
+    demo: "Demo rejim — haqiqiy ma'lumotlarni ko'rish uchun ilovani maktabning Telegram botidan oching. Kodlar: K7M2QX, J6RV2T (ota-ona), TEACH1 (o'qituvchi), ADMIN1 (admin).",
+    paused: "To'xtatilgan", finished: 'Tugatgan', active: 'Faol', forGroup: '{group} guruhi uchun',
+    payments: "To'lov", nextPayment: "Keyingi to'lov", allPaid: "Barcha to'lovlar amalga oshirilgan", currency: "so'm",
+    dueIn: '{n} kundan keyin', dueIn1: 'ertaga', due_today: 'bugun', overdueBy: '{n} kun kechikdi', paidOn: "{date} to'langan",
+    st_paid: "To'langan", st_overdue: 'Kechikkan', st_due_today: 'Bugun', st_due_soon: 'Yaqinda', st_upcoming: 'Kutilmoqda',
+    noPayments: "Hozircha to'lovlar yo'q.", payNote: "To'lov bo'yicha savollar bo'lsa, maktab bilan bog'laning.",
+    adminOn: "Siz har kuni to'lovlar hisobotini olasiz.", adminOff: "O'chirish", adminLinked: "Tayyor! To'lovlar hisoboti har kuni ertalab keladi."
   }
 };
+Object.assign(T.en, {
+  connectText2: 'Log in with the phone number you gave the school, or with your access code.',
+  phoneLogin: 'Log in with phone number', haveCode: 'I have an access code', newStudent: 'New student?', register: 'Register a new student',
+  phone_not_found: "We couldn't find this phone number. Use the access code from the school, or register below.",
+  phone_mismatch: 'Please share your own phone number.', phone_old_app: 'Please update Telegram to log in with your phone, or use the access code.',
+  myRegs: 'Your applications', reg_new: 'Received', reg_contacted: 'We contacted you', reg_approved: 'Approved', reg_rejected: 'Closed',
+  modeFamily: '👪 Family', modeWork: '💼 Work', forbidden: 'You have no access to this.', date_not_allowed: 'This date can’t be used for this lesson.',
+  bad_request: 'Please check the values and try again.', changed: 'This row changed in the sheet. Refresh and try again.',
+  already_marked: 'This lesson is already marked.', already_approved: 'Already approved.', not_found: 'Not found.',
+  form_invalid: 'Please fill in the fields marked in red.',
+  hello: 'Hello, {name}', roleTeacher: 'Teacher', roleAdmin: 'Admin', back: 'Back',
+  kStudents: 'Active students', kAtt: 'Attendance this month', kMark: 'Average mark this month', kOverdue: 'Overdue payments', kDueToday: 'Due today', kRegs: 'New applications',
+  navStudents: 'Students', navPayments: 'Payments', navAnnounce: 'Announcement', navRegs: 'Applications',
+  myGroups: 'Groups', studentsN: '{n} students', lastLesson: 'last lesson {date}', noGroups: 'No groups yet.',
+  indLessons: 'Individual lessons', newInd: '+ New', planned: 'Planned', recentDone: 'Recently done', noInd: 'No individual lessons planned.',
+  lessonToday: '+ Lesson today', otherDate: 'Other date', open: 'Open', pastLessons: 'Lessons', markedN: '{m} of {n} marked',
+  absentN: '{n} absent', groupStudents: 'Students',
+  lessonOf: 'Lesson', indLessonWith: 'Individual lesson', date: 'Date', startTime: 'Start', allPresent: 'All present',
+  stPresent: 'Present', stLate: 'Late', stAbsent: 'Absent', stExcused: 'Excused', arrival: 'Arrived', hwPct: 'Homework %', markPct: 'Mark %',
+  commentPh: 'Comment for parents (optional)', save: 'Save lesson', saving: 'Saving…', saved: 'Saved ✓', savedAbs: 'Saved ✓ Absence messages sent: {n}',
+  msgSent: 'message sent', cancelLesson: 'Cancel this lesson', cancelConfirm: 'Cancel this planned lesson?',
+  newIndTitle: 'New individual lesson', search: 'Search', chooseStudent: 'Choose a student', create: 'Create lesson', created: 'Lesson planned ✓',
+  students: 'Students', allStatuses: 'All', payOk: 'Paid', payOver: 'Overdue', paySoon: 'Due soon', contacts: 'Contacts',
+  dob: 'Date of birth', age: 'Age', contactThrough: 'Contact through', studentPhone: 'Student phone', studentTg: 'Student Telegram',
+  parentName: 'Parent', parentPhone: 'Parent phone', parentTg: 'Parent Telegram', accessCode: 'Access code', linkedAcc: 'Linked Telegram accounts',
+  adminNotes: 'Admin notes',
+  overdueTab: 'Overdue', upcomingTab: 'Upcoming', paidTab: 'Paid', markPaid: 'Mark paid', markPaidConfirm: 'Mark {name} — {amount} as paid?', markedPaid: 'Marked as paid ✓',
+  annTitle: 'New announcement', audience: 'Who gets it', audAll: 'All parents', audFamily: 'One family…', title: 'Title', message: 'Message',
+  send: 'Send', sendConfirm: 'Send to {n} parent(s)?', sentN: 'Sent to {n} ✓', noRecipients: 'No linked parents for this choice yet.',
+  regsTitle: 'Applications', noRegs: 'No applications yet.', approve: 'Approve', reject: 'Reject', contacted: 'Mark contacted',
+  approveGroup: 'Group', approveStart: 'Start date (payment day)', approvedMsg: 'Student created ✓ ID {id}, code {code}', rejectConfirm: 'Reject this application?',
+  regTitle: 'New student', regIntro: 'Fill in the form and the school will contact you.', fStudentName: 'Student full name', fDob: 'Date of birth',
+  fLevel: 'English level', fGoal: 'Goal', fDays: 'Preferred days', fTime: 'Preferred time', fContact: 'Who should we contact?',
+  cParent: 'Parent', cStudent: 'Student', cBoth: 'Both', fParentName: 'Parent full name', fRelation: 'Relation', fParentPhone: 'Parent phone',
+  fParentTg: 'Parent Telegram username', fStudentPhone: 'Student phone', fStudentTg: 'Student Telegram username', fSource: 'How did you hear about us?',
+  fComment: 'Comment', fConsent: 'I agree that the school stores this information to organise lessons and contact me.', submit: 'Send application',
+  sending: 'Sending…', regDone: 'Thank you! Your application was sent.', regDone2: 'The school will contact you soon.', optional: 'optional', choose: 'Choose…',
+  phoneHint: 'e.g. +998 90 123 45 67',
+  lv_beginner: 'Beginner', lv_elementary: 'Elementary', lv_pre: 'Pre-Intermediate', lv_int: 'Intermediate', lv_upper: 'Upper-Intermediate', lv_adv: 'Advanced', lv_dk: "Don't know",
+  g_general: 'General English', g_ielts: 'IELTS', g_school: 'School support', g_kids: 'Kids English', g_speaking: 'Speaking', g_other: 'Other',
+  t_morning: 'Morning', t_afternoon: 'Afternoon', t_evening: 'Evening',
+  r_mother: 'Mother', r_father: 'Father', r_guardian: 'Guardian', r_other: 'Other',
+  s_instagram: 'Instagram', s_telegram: 'Telegram', s_friends: 'Friends', s_google: 'Google', s_banner: 'Street banner', s_other: 'Other',
+  d_Mon: 'Mon', d_Tue: 'Tue', d_Wed: 'Wed', d_Thu: 'Thu', d_Fri: 'Fri', d_Sat: 'Sat', d_Sun: 'Sun', individual: 'Individual'
+});
+Object.assign(T.ru, {
+  connectText2: 'Войдите по номеру телефона, который вы оставили в школе, или по коду доступа.',
+  phoneLogin: 'Войти по номеру телефона', haveCode: 'У меня есть код доступа', newStudent: 'Новый ученик?', register: 'Записать нового ученика',
+  phone_not_found: 'Номер не найден. Используйте код доступа от школы или запишитесь ниже.',
+  phone_mismatch: 'Пожалуйста, поделитесь своим номером.', phone_old_app: 'Обновите Telegram, чтобы войти по номеру, или используйте код доступа.',
+  myRegs: 'Ваши заявки', reg_new: 'Получена', reg_contacted: 'Мы связались с вами', reg_approved: 'Принята', reg_rejected: 'Закрыта',
+  modeFamily: '👪 Семья', modeWork: '💼 Работа', forbidden: 'Нет доступа.', date_not_allowed: 'Эту дату нельзя использовать для урока.',
+  bad_request: 'Проверьте значения и попробуйте ещё раз.', changed: 'Строка изменилась в таблице. Обновите и попробуйте снова.',
+  already_marked: 'Урок уже отмечен.', already_approved: 'Уже принята.', not_found: 'Не найдено.', form_invalid: 'Заполните поля, отмеченные красным.',
+  hello: 'Здравствуйте, {name}', roleTeacher: 'Преподаватель', roleAdmin: 'Администратор', back: 'Назад',
+  kStudents: 'Активные ученики', kAtt: 'Посещаемость за месяц', kMark: 'Средняя оценка за месяц', kOverdue: 'Просроченные оплаты', kDueToday: 'Оплата сегодня', kRegs: 'Новые заявки',
+  navStudents: 'Ученики', navPayments: 'Оплаты', navAnnounce: 'Объявление', navRegs: 'Заявки',
+  myGroups: 'Группы', studentsN: 'учеников: {n}', lastLesson: 'последний урок {date}', noGroups: 'Групп пока нет.',
+  indLessons: 'Индивидуальные уроки', newInd: '+ Новый', planned: 'Запланированы', recentDone: 'Недавно прошли', noInd: 'Индивидуальных уроков нет.',
+  lessonToday: '+ Урок сегодня', otherDate: 'Другая дата', open: 'Открыть', pastLessons: 'Уроки', markedN: 'отмечено {m} из {n}',
+  absentN: 'пропусков: {n}', groupStudents: 'Ученики',
+  lessonOf: 'Урок', indLessonWith: 'Индивидуальный урок', date: 'Дата', startTime: 'Начало', allPresent: 'Все пришли',
+  stPresent: 'Был', stLate: 'Опоздал', stAbsent: 'Не был', stExcused: 'Уваж.', arrival: 'Пришёл', hwPct: 'ДЗ %', markPct: 'Оценка %',
+  commentPh: 'Комментарий для родителей (необязательно)', save: 'Сохранить урок', saving: 'Сохраняем…', saved: 'Сохранено ✓', savedAbs: 'Сохранено ✓ Сообщений о пропуске: {n}',
+  msgSent: 'сообщение отправлено', cancelLesson: 'Отменить урок', cancelConfirm: 'Отменить запланированный урок?',
+  newIndTitle: 'Новый индивидуальный урок', search: 'Поиск', chooseStudent: 'Выберите ученика', create: 'Создать урок', created: 'Урок запланирован ✓',
+  students: 'Ученики', allStatuses: 'Все', payOk: 'Оплачено', payOver: 'Просрочено', paySoon: 'Скоро оплата', contacts: 'Контакты',
+  dob: 'Дата рождения', age: 'Возраст', contactThrough: 'Связь через', studentPhone: 'Телефон ученика', studentTg: 'Telegram ученика',
+  parentName: 'Родитель', parentPhone: 'Телефон родителя', parentTg: 'Telegram родителя', accessCode: 'Код доступа', linkedAcc: 'Подключено аккаунтов Telegram',
+  adminNotes: 'Заметки админа',
+  overdueTab: 'Просрочено', upcomingTab: 'Предстоит', paidTab: 'Оплачено', markPaid: 'Оплачено', markPaidConfirm: 'Отметить оплату: {name} — {amount}?', markedPaid: 'Отмечено как оплачено ✓',
+  annTitle: 'Новое объявление', audience: 'Кому', audAll: 'Всем родителям', audFamily: 'Одной семье…', title: 'Заголовок', message: 'Текст',
+  send: 'Отправить', sendConfirm: 'Отправить {n} родителям?', sentN: 'Отправлено: {n} ✓', noRecipients: 'Для этого выбора пока нет подключённых родителей.',
+  regsTitle: 'Заявки', noRegs: 'Заявок пока нет.', approve: 'Принять', reject: 'Отклонить', contacted: 'Связались',
+  approveGroup: 'Группа', approveStart: 'Дата начала (день оплаты)', approvedMsg: 'Ученик создан ✓ ID {id}, код {code}', rejectConfirm: 'Отклонить заявку?',
+  regTitle: 'Новый ученик', regIntro: 'Заполните форму, и школа свяжется с вами.', fStudentName: 'ФИО ученика', fDob: 'Дата рождения',
+  fLevel: 'Уровень английского', fGoal: 'Цель', fDays: 'Удобные дни', fTime: 'Удобное время', fContact: 'С кем связываться?',
+  cParent: 'Родитель', cStudent: 'Ученик', cBoth: 'Оба', fParentName: 'ФИО родителя', fRelation: 'Кем приходится', fParentPhone: 'Телефон родителя',
+  fParentTg: 'Telegram родителя', fStudentPhone: 'Телефон ученика', fStudentTg: 'Telegram ученика', fSource: 'Откуда вы о нас узнали?',
+  fComment: 'Комментарий', fConsent: 'Я согласен(на), что школа хранит эти данные для организации занятий и связи со мной.', submit: 'Отправить заявку',
+  sending: 'Отправляем…', regDone: 'Спасибо! Заявка отправлена.', regDone2: 'Школа скоро свяжется с вами.', optional: 'необязательно', choose: 'Выберите…',
+  phoneHint: 'например, +998 90 123 45 67',
+  lv_beginner: 'Beginner (с нуля)', lv_elementary: 'Elementary', lv_pre: 'Pre-Intermediate', lv_int: 'Intermediate', lv_upper: 'Upper-Intermediate', lv_adv: 'Advanced', lv_dk: 'Не знаю',
+  g_general: 'Общий английский', g_ielts: 'IELTS', g_school: 'Помощь со школой', g_kids: 'Английский для детей', g_speaking: 'Разговорный', g_other: 'Другое',
+  t_morning: 'Утро', t_afternoon: 'День', t_evening: 'Вечер',
+  r_mother: 'Мама', r_father: 'Папа', r_guardian: 'Опекун', r_other: 'Другое',
+  s_instagram: 'Instagram', s_telegram: 'Telegram', s_friends: 'Друзья', s_google: 'Google', s_banner: 'Баннер на улице', s_other: 'Другое',
+  d_Mon: 'Пн', d_Tue: 'Вт', d_Wed: 'Ср', d_Thu: 'Чт', d_Fri: 'Пт', d_Sat: 'Сб', d_Sun: 'Вс', individual: 'Индивидуальный'
+});
+Object.assign(T.uz, {
+  connectText2: "Maktabga bergan telefon raqamingiz yoki kirish kodi orqali kiring.",
+  phoneLogin: 'Telefon raqam orqali kirish', haveCode: 'Menda kirish kodi bor', newStudent: "Yangi o'quvchimi?", register: "Yangi o'quvchini yozdirish",
+  phone_not_found: "Bu raqam topilmadi. Maktabdan olingan kirish kodidan foydalaning yoki quyida ro'yxatdan o'ting.",
+  phone_mismatch: "Iltimos, o'z raqamingizni yuboring.", phone_old_app: "Telefon orqali kirish uchun Telegramni yangilang yoki kirish kodidan foydalaning.",
+  myRegs: 'Arizalaringiz', reg_new: 'Qabul qilindi', reg_contacted: "Siz bilan bog'landik", reg_approved: 'Tasdiqlandi', reg_rejected: 'Yopildi',
+  modeFamily: '👪 Oila', modeWork: '💼 Ish', forbidden: "Ruxsat yo'q.", date_not_allowed: "Bu sanani dars uchun ishlatib bo'lmaydi.",
+  bad_request: "Qiymatlarni tekshirib, qayta urinib ko'ring.", changed: "Jadvalda bu qator o'zgardi. Yangilab, qayta urinib ko'ring.",
+  already_marked: 'Bu dars allaqachon belgilangan.', already_approved: 'Allaqachon tasdiqlangan.', not_found: 'Topilmadi.', form_invalid: "Qizil bilan belgilangan maydonlarni to'ldiring.",
+  hello: 'Assalomu alaykum, {name}', roleTeacher: "O'qituvchi", roleAdmin: 'Administrator', back: 'Orqaga',
+  kStudents: "Faol o'quvchilar", kAtt: 'Shu oy davomat', kMark: "Shu oy o'rtacha baho", kOverdue: "Kechikkan to'lovlar", kDueToday: "Bugun to'lov", kRegs: 'Yangi arizalar',
+  navStudents: "O'quvchilar", navPayments: "To'lovlar", navAnnounce: "E'lon", navRegs: 'Arizalar',
+  myGroups: 'Guruhlar', studentsN: "{n} o'quvchi", lastLesson: 'oxirgi dars {date}', noGroups: "Hozircha guruhlar yo'q.",
+  indLessons: 'Individual darslar', newInd: '+ Yangi', planned: 'Rejalashtirilgan', recentDone: "Yaqinda o'tgan", noInd: "Individual darslar yo'q.",
+  lessonToday: '+ Bugungi dars', otherDate: 'Boshqa sana', open: 'Ochish', pastLessons: 'Darslar', markedN: '{n} dan {m} belgilangan',
+  absentN: '{n} kelmagan', groupStudents: "O'quvchilar",
+  lessonOf: 'Dars', indLessonWith: 'Individual dars', date: 'Sana', startTime: 'Boshlanishi', allPresent: 'Hammasi keldi',
+  stPresent: 'Keldi', stLate: 'Kechikdi', stAbsent: 'Kelmadi', stExcused: 'Sababli', arrival: 'Keldi', hwPct: 'UV %', markPct: 'Baho %',
+  commentPh: 'Ota-onalar uchun izoh (ixtiyoriy)', save: 'Darsni saqlash', saving: 'Saqlanmoqda…', saved: 'Saqlandi ✓', savedAbs: 'Saqlandi ✓ Kelmaganlik xabarlari: {n}',
+  msgSent: 'xabar yuborildi', cancelLesson: 'Darsni bekor qilish', cancelConfirm: 'Rejalashtirilgan dars bekor qilinsinmi?',
+  newIndTitle: 'Yangi individual dars', search: 'Qidirish', chooseStudent: "O'quvchini tanlang", create: 'Dars yaratish', created: 'Dars rejalashtirildi ✓',
+  students: "O'quvchilar", allStatuses: 'Hammasi', payOk: "To'langan", payOver: 'Kechikkan', paySoon: "Tez orada to'lov", contacts: 'Kontaktlar',
+  dob: "Tug'ilgan sana", age: 'Yoshi', contactThrough: "Kim bilan bog'lanish", studentPhone: "O'quvchi telefoni", studentTg: "O'quvchi Telegrami",
+  parentName: 'Ota-ona', parentPhone: 'Ota-ona telefoni', parentTg: 'Ota-ona Telegrami', accessCode: 'Kirish kodi', linkedAcc: 'Ulangan Telegram akkauntlar',
+  adminNotes: 'Admin izohlari',
+  overdueTab: 'Kechikkan', upcomingTab: 'Kutilmoqda', paidTab: "To'langan", markPaid: "To'landi", markPaidConfirm: "{name} — {amount} to'langan deb belgilansinmi?", markedPaid: "To'langan deb belgilandi ✓",
+  annTitle: "Yangi e'lon", audience: 'Kimga', audAll: 'Barcha ota-onalarga', audFamily: 'Bitta oilaga…', title: 'Sarlavha', message: 'Matn',
+  send: 'Yuborish', sendConfirm: '{n} ota-onaga yuborilsinmi?', sentN: 'Yuborildi: {n} ✓', noRecipients: "Bu tanlov uchun hali ulangan ota-onalar yo'q.",
+  regsTitle: 'Arizalar', noRegs: "Hozircha arizalar yo'q.", approve: 'Tasdiqlash', reject: 'Rad etish', contacted: "Bog'lanildi",
+  approveGroup: 'Guruh', approveStart: "Boshlanish sanasi (to'lov kuni)", approvedMsg: "O'quvchi yaratildi ✓ ID {id}, kod {code}", rejectConfirm: 'Ariza rad etilsinmi?',
+  regTitle: "Yangi o'quvchi", regIntro: "Shaklni to'ldiring, maktab siz bilan bog'lanadi.", fStudentName: "O'quvchining F.I.Sh.", fDob: "Tug'ilgan sana",
+  fLevel: 'Ingliz tili darajasi', fGoal: 'Maqsad', fDays: 'Qulay kunlar', fTime: 'Qulay vaqt', fContact: "Kim bilan bog'lanamiz?",
+  cParent: 'Ota-ona', cStudent: "O'quvchi", cBoth: 'Ikkalasi', fParentName: 'Ota-onaning F.I.Sh.', fRelation: 'Kimi', fParentPhone: 'Ota-ona telefoni',
+  fParentTg: 'Ota-ona Telegrami', fStudentPhone: "O'quvchi telefoni", fStudentTg: "O'quvchi Telegrami", fSource: 'Biz haqimizda qayerdan bildingiz?',
+  fComment: 'Izoh', fConsent: "Maktab bu ma'lumotlarni darslarni tashkil qilish va men bilan bog'lanish uchun saqlashiga roziman.", submit: 'Arizani yuborish',
+  sending: 'Yuborilmoqda…', regDone: 'Rahmat! Arizangiz yuborildi.', regDone2: "Maktab tez orada siz bilan bog'lanadi.", optional: 'ixtiyoriy', choose: 'Tanlang…',
+  phoneHint: 'masalan, +998 90 123 45 67',
+  lv_beginner: "Beginner (noldan)", lv_elementary: 'Elementary', lv_pre: 'Pre-Intermediate', lv_int: 'Intermediate', lv_upper: 'Upper-Intermediate', lv_adv: 'Advanced', lv_dk: 'Bilmayman',
+  g_general: 'Umumiy ingliz tili', g_ielts: 'IELTS', g_school: 'Maktab darslariga yordam', g_kids: 'Bolalar uchun ingliz tili', g_speaking: "So'zlashuv", g_other: 'Boshqa',
+  t_morning: 'Ertalab', t_afternoon: 'Kunduzi', t_evening: 'Kechqurun',
+  r_mother: 'Onasi', r_father: 'Otasi', r_guardian: 'Vasiy', r_other: 'Boshqa',
+  s_instagram: 'Instagram', s_telegram: 'Telegram', s_friends: "Do'stlar", s_google: 'Google', s_banner: "Ko'chadagi banner", s_other: 'Boshqa',
+  d_Mon: 'Du', d_Tue: 'Se', d_Wed: 'Ch', d_Thu: 'Pa', d_Fri: 'Ju', d_Sat: 'Sh', d_Sun: 'Ya', individual: 'Individual'
+});
 const LOCALE = { en: 'en-GB', ru: 'ru-RU', uz: 'uz-Latn-UZ' };
 
 /* ---------------- state ---------------- */
@@ -249,7 +471,20 @@ const state = {
   error: null,
   busy: false,
   refreshing: false,
-  lastCode: ''
+  lastCode: '',
+  mode: store.get('mode') || 'parent',   // parent | staff
+  showCode: false,
+  sv: null,          // current staff screen {name, ...params}
+  svStack: [],       // previous staff screens (Back)
+  sd: null,          // data of the current staff screen
+  sLoading: false,
+  lesson: null,      // lesson editor
+  pick: null,        // individual-lesson picker
+  q: '',             // search text
+  payTab: 'overdue',
+  ann: { audience: 'All', title: '', message: '', family: '' },
+  reg: null, regBad: [], regDone: false,
+  approve: { group: '', start: '' }
 };
 function detectLang() {
   const c = ((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || 'en').toLowerCase();
@@ -279,7 +514,7 @@ async function api(action, extra) {
   } catch (e) { throw codeErr('network'); }
   let data;
   try { data = await res.json(); } catch (e) { throw codeErr('server_error'); }
-  if (!data.ok) throw codeErr(data.error || 'server_error');
+  if (!data.ok) { const e = codeErr(data.error || 'server_error'); e.fields = data.fields; throw e; }
   return data;
 }
 function codeErr(code) { const e = new Error(code); e.code = code; return e; }
@@ -290,7 +525,7 @@ async function load(isRefresh) {
   try {
     const data = await api('me');
     setData(data);
-    state.view = data.students.length ? 'dash' : 'connect';
+    route();
   } catch (e) {
     if (!isRefresh || !state.data) { state.view = 'error'; state.error = e.code || 'server_error'; }
     else toast(t(e.code || 'server_error'));
@@ -311,8 +546,11 @@ async function connect(code) {
   try {
     const data = await api('link', { code: code });
     setData(data);
-    if (data.linkedStudentId) { state.kid = data.linkedStudentId; store.set('kid', state.kid); }
-    state.view = 'dash'; state.tab = 'lessons';
+    if (data.linkedStudentId) { state.kid = data.linkedStudentId; store.set('kid', state.kid); state.mode = 'parent'; }
+    if (data.staffLinked) state.mode = 'staff';
+    state.tab = 'lessons'; state.lastCode = ''; state.showCode = false;
+    route();
+    if (data.adminLinked) setTimeout(() => toast(t('adminLinked')), 50);
     haptic('success');
     askWriteAccess();
   } catch (e) {
@@ -330,7 +568,16 @@ async function removeKid(kid) {
   try {
     const data = await api('unlink', { studentId: kid });
     setData(data);
-    state.view = data.students.length ? 'dash' : 'connect';
+    route();
+  } catch (e) { toast(t(e.code || 'server_error')); }
+  render();
+}
+
+async function adminOff() {
+  try {
+    const data = await api('unlink', { studentId: 'ADMIN' });
+    setData(data);
+    route();
   } catch (e) { toast(t(e.code || 'server_error')); }
   render();
 }
@@ -351,12 +598,19 @@ function toast(msg) {
   try { if (IN_TELEGRAM && tg.isVersionAtLeast('6.2')) { tg.showAlert(msg); return; } } catch (e) {}
   alert(msg);
 }
+function canGoBack() {
+  const d = state.data || {};
+  return (state.view === 'staff' && state.svStack.length > 0) || state.view === 'register' ||
+    (state.view === 'connect' && ((d.students && d.students.length) || d.staff));
+}
+function goBack() {
+  if (state.view === 'staff' && state.svStack.length) { const prev = state.svStack.pop(); openStaff(prev.name, prev, false); return; }
+  if (state.view === 'register') { state.view = 'connect'; state.regDone = false; render(); return; }
+  state.error = null; route(); render();
+}
 function syncBackButton() {
   if (!IN_TELEGRAM || !tg.BackButton) return;
-  try {
-    const canGoBack = state.view === 'connect' && state.data && state.data.students.length;
-    canGoBack ? tg.BackButton.show() : tg.BackButton.hide();
-  } catch (e) {}
+  try { canGoBack() ? tg.BackButton.show() : tg.BackButton.hide(); } catch (e) {}
 }
 
 /* ---------------- formatting ---------------- */
@@ -390,6 +644,14 @@ function tone(pct) { return pct == null ? 'i' : pct >= 80 ? 'g' : pct >= 60 ? 'm
 function toneColor(pct) { return pct == null ? 'var(--info)' : pct >= 80 ? 'var(--good)' : pct >= 60 ? 'var(--mid)' : 'var(--bad)'; }
 function initials(name) { return (name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
 function statusLabel(st) { const k = String(st || '').toLowerCase(); return T.en[k] ? t(k) : st; }
+function money(n) { return n == null ? '—' : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0') + '\u00a0' + t('currency'); }
+function payWhen(p) {
+  if (p.status === 'paid') return p.paidOn ? t('paidOn', { date: fmtDate(p.paidOn) }) : t('st_paid');
+  if (p.status === 'overdue') return t('overdueBy', { n: p.days });
+  if (p.status === 'due_today') return t('due_today');
+  return p.days === 1 ? t('dueIn1') : t('dueIn', { n: p.days });
+}
+const PAY_TONE = { paid: 'g', overdue: 'b', due_today: 'm', due_soon: 'm', upcoming: 'i' };
 function pctText(n) { return n == null ? '—' : Math.round(n) + '%'; }
 
 /* ---------------- views ---------------- */
@@ -398,11 +660,13 @@ const ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
 function topBar(showRefresh) {
   const school = (state.data && state.data.school) || 'School';
+  const d = state.data || {};
+  const both = d.staff && d.students && d.students.length;
   return `<div class="top">
-    <div class="school">${esc(school)}</div>
+    ${both ? `<div class="modes"><button data-act="mode" data-v="parent" class="${state.mode === 'parent' ? 'on' : ''}">${esc(t('modeFamily'))}</button><button data-act="mode" data-v="staff" class="${state.mode === 'staff' ? 'on' : ''}">${esc(t('modeWork'))}</button></div><div style="flex:1"></div>` : `<div class="school">${esc(school)}</div>`}
     <div class="langs">${['en', 'ru', 'uz'].map(l => `<button data-lang="${l}" class="${l === state.lang ? 'on' : ''}">${l.toUpperCase()}</button>`).join('')}</div>
     ${showRefresh ? `<button class="icon-btn ${state.refreshing ? 'spin' : ''}" data-act="refresh" aria-label="Refresh">${ICON_REFRESH}</button>` : ''}
-  </div>${DEMO ? `<div class="demo">${esc(t('demo'))}</div>` : ''}`;
+  </div>${DEMO ? `<div class="demo">${esc(t('demo'))}</div>` : ''}${state.data && state.data.isAdmin && !state.data.staff ? `<div class="admin">🔔 <span>${esc(t('adminOn'))}</span><button data-act="admin-off">${esc(t('adminOff'))}</button></div>` : ''}`;
 }
 
 function viewLoading() {
@@ -417,34 +681,54 @@ function viewError() {
   </div></div>`;
 }
 
+function canPhone() {
+  if (DEMO) return true;
+  try { return IN_TELEGRAM && typeof tg.requestContact === 'function' && tg.isVersionAtLeast('6.9'); } catch (e) { return false; }
+}
 function viewConnect() {
-  const hasKids = state.data && state.data.students.length;
+  const d = state.data || {};
+  const back = (d.students && d.students.length) || d.staff;
+  const phone = canPhone();
+  const showCode = state.showCode || !phone;
+  const regs = d.registrations || [];
   return topBar(false) + `<div class="connect">
     <div class="badge">${ICON_BOOK}</div>
     <h1>${esc(t('connectTitle'))}</h1>
-    <p>${esc(t('connectText'))}</p>
-    <form id="codeForm" autocomplete="off">
-      <input class="code" id="code" value="${esc(state.lastCode || '')}" maxlength="12" inputmode="text" autocapitalize="characters" spellcheck="false" placeholder="${esc(t('placeholder'))}">
-      <div class="err">${state.error ? esc(t(state.error)) : ''}</div>
-      <button class="btn" type="submit" ${state.busy ? 'disabled' : ''}>${esc(t(state.busy ? 'connecting' : 'connect'))}</button>
-    </form>
-    ${hasKids ? `<div class="actions"><button class="link-danger" style="color:var(--link)" data-act="back">${esc(t('cancel'))}</button></div>` : ''}
+    <p>${esc(t(phone ? 'connectText2' : 'connectText'))}</p>
+    ${phone ? `<button class="btn" data-act="phone" ${state.busy ? 'disabled' : ''}>📱 ${esc(t('phoneLogin'))}</button>` : ''}
+    ${showCode ? `<form id="codeForm" autocomplete="off" style="margin-top:${phone ? 12 : 0}px">
+      <input class="code" id="code" value="${esc(state.lastCode || '')}" maxlength="14" inputmode="text" autocapitalize="characters" spellcheck="false" placeholder="${esc(t('placeholder'))}">
+      <button class="btn ${phone ? 'ghost' : ''}" type="submit" ${state.busy ? 'disabled' : ''}>${esc(t(state.busy ? 'connecting' : 'connect'))}</button>
+    </form>` : `<button class="btn ghost" style="margin-top:10px" data-act="show-code">${esc(t('haveCode'))}</button>`}
+    <div class="err" style="margin-top:10px">${state.error ? esc(t(state.error)) : ''}</div>
+    <div class="divider">${esc(t('newStudent'))}</div>
+    <button class="btn ghost" data-act="register">📝 ${esc(t('register'))}</button>
+    ${regs.length ? `<div class="list" style="margin-top:14px;text-align:left"><div class="row"><div class="main"><div class="t">${esc(t('myRegs'))}</div></div></div>${regs.map(r => `<div class="row"><div class="main"><div>${esc(r.name)}</div><div class="s">${fmtDate(r.submitted)}</div></div><span class="pill ${r.status === 'approved' ? 'g' : r.status === 'rejected' ? 'i' : 'm'}" style="margin-top:0">${esc(t('reg_' + r.status))}</span></div>`).join('')}</div>` : ''}
+    ${back ? `<div class="actions"><button class="link-danger" style="color:var(--link)" data-act="back">${esc(t('cancel'))}</button></div>` : ''}
   </div>`;
 }
 
 function viewDash() {
   const kids = state.data.students;
   const s = kids.find(k => k.id === state.kid) || kids[0];
-  const news = state.data.announcements;
-  const st = s.stats || {};
-  const status = String(s.status || '').toLowerCase();
-
   let html = topBar(true);
   if (kids.length > 1) {
     html += `<div class="kids">${kids.map(k => `<button class="kid ${k.id === s.id ? 'on' : ''}" data-kid="${esc(k.id)}">${esc(k.name.split(' ')[0])}</button>`).join('')}</div>`;
   }
+  html += studentBody(s, state.data.announcements, '');
+  html += `<div class="actions">
+    <button class="btn ghost" data-act="add">＋ ${esc(t('addChild'))}</button>
+    <button class="link-danger" data-act="remove" data-id="${esc(s.id)}">${esc(t('remove', { name: s.name.split(' ')[0] }))}</button>
+  </div>`;
+  return html;
+}
 
-  html += `<div class="card">
+/** A student's page (parents, and admins via Students). news = null hides the News tab; extra = HTML after the stats. */
+function studentBody(s, news, extra) {
+  const st = s.stats || {};
+  const status = String(s.status || '').toLowerCase();
+  if (!news && state.tab === 'news') state.tab = 'lessons';
+  let html = `<div class="card">
     <div class="hero">
       <div class="avatar">${esc(initials(s.name))}</div>
       <div style="min-width:0">
@@ -477,22 +761,21 @@ function viewDash() {
     ${tile(pctText(st.mark), t('mark'), st.mark, grp(st.groupMark))}
   </div>`;
 
+  html += extra || '';
+  html += payCard(s);
   if (s.comment) html += `<div class="card note"><div class="k">${esc(t('schoolNote'))}</div><div>${esc(s.comment)}</div></div>`;
 
   html += `<div class="tabs">
     <button data-tab="lessons" class="${state.tab === 'lessons' ? 'on' : ''}">${esc(t('lessons'))}</button>
     <button data-tab="progress" class="${state.tab === 'progress' ? 'on' : ''}">${esc(t('progress'))}</button>
-    <button data-tab="news" class="${state.tab === 'news' ? 'on' : ''}">${esc(t('news'))}${news.length && state.tab !== 'news' ? `<span class="dot">${news.length}</span>` : ''}</button>
+    <button data-tab="payments" class="${state.tab === 'payments' ? 'on' : ''}">${esc(t('payments'))}</button>
+    ${news ? `<button data-tab="news" class="${state.tab === 'news' ? 'on' : ''}">${esc(t('news'))}${news.length && state.tab !== 'news' ? `<span class="dot"></span>` : ''}</button>` : ''}
   </div>`;
 
   if (state.tab === 'lessons') html += tabLessons(s);
   else if (state.tab === 'progress') html += tabProgress(s);
+  else if (state.tab === 'payments') html += tabPayments(s);
   else html += tabNews(news);
-
-  html += `<div class="actions">
-    <button class="btn ghost" data-act="add">＋ ${esc(t('addChild'))}</button>
-    <button class="link-danger" data-act="remove" data-id="${esc(s.id)}">${esc(t('remove', { name: s.name.split(' ')[0] }))}</button>
-  </div>`;
   return html;
 }
 
@@ -506,6 +789,7 @@ function tabLessons(s) {
       <div class="meta">
         <span class="pill ${cls[l.status] || 'i'}" style="margin-top:0">${esc(T.en[l.status] ? t(l.status) : l.status)}${l.status === 'late' && l.minutesLate ? ' · ' + esc(t('minLate', { n: l.minutesLate })) : ''}</span>
         ${l.start ? `<span class="muted">${esc(l.start)}${l.status === 'late' && l.arrival ? ' → ' + esc(l.arrival) : ''}</span>` : ''}
+        ${l.individual ? `<span class="tag" style="font-size:11px">${esc(t('individual'))}</span>` : ''}
       </div>
       ${l.comment ? `<div class="c" style="font-size:13px;margin-top:6px;font-style:italic;opacity:.85">“${esc(l.comment)}”</div>` : ''}
     </div>
@@ -562,6 +846,40 @@ function monthChart(ms) {
   return `<svg class="big" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('byMonth'))}">${g}</svg>`;
 }
 
+function payCard(s) {
+  const ps = s.payments || [];
+  if (!ps.length) return '';
+  const unpaid = ps.filter(p => !p.paid).sort((a, b) => a.due < b.due ? -1 : 1);
+  if (!unpaid.length) {
+    return `<div class="card paycard"><div class="ico g">✓</div><div class="main"><div class="k">${esc(t('payments'))}</div>
+      <div style="font-weight:600">${esc(t('allPaid'))}</div></div></div>`;
+  }
+  const p = unpaid[0];
+  const tone = PAY_TONE[p.status] || 'i';
+  return `<div class="card paycard ${p.status === 'overdue' ? 'over' : ''}">
+    <div class="ico ${tone}">${p.status === 'overdue' ? '!' : '💳'}</div>
+    <div class="main"><div class="k">${esc(t('nextPayment'))}</div>
+      <div class="amt">${money(p.amount)}</div>
+      <div class="when">${fmtDate(p.due, { weekday: 'short', day: 'numeric', month: 'long' })}</div></div>
+    <span class="pill ${tone}" style="margin-top:0">${esc(payWhen(p))}</span>
+  </div>`;
+}
+
+function tabPayments(s) {
+  const ps = s.payments || [];
+  if (!ps.length) return `<div class="list"><div class="empty">${esc(t('noPayments'))}</div></div>`;
+  return `<div class="list">${ps.map(p => `<div class="row" style="align-items:center">
+    <div class="main">
+      <div class="t">${fmtDate(p.due, { day: 'numeric', month: 'long' })}</div>
+      <div class="s">${esc(payWhen(p))}</div>
+    </div>
+    <div class="score">
+      <div class="big">${money(p.amount)}</div>
+      <span class="pill ${PAY_TONE[p.status] || 'i'}">${esc(t('st_' + p.status))}</span>
+    </div>
+  </div>`).join('')}</div><div class="muted" style="text-align:center;margin:-2px 0 8px">${esc(t('payNote'))}</div>`;
+}
+
 function tabNews(list) {
   if (!list.length) return `<div class="list"><div class="empty">${esc(t('noNews'))}</div></div>`;
   return list.map(a => `<div class="card news">
@@ -571,32 +889,549 @@ function tabNews(list) {
   </div>`).join('');
 }
 
+/* ---------------- routing between family / work / connect ---------------- */
+function route() {
+  const d = state.data || { students: [] };
+  if (d.staff && (state.mode === 'staff' || !d.students.length)) {
+    state.mode = 'staff'; state.view = 'staff';
+    if (!state.sv) { state.svStack = []; openStaff('home', {}, false); }
+  } else if (d.students.length) {
+    state.mode = 'parent'; state.view = 'dash';
+  } else {
+    state.view = 'connect';
+  }
+  store.set('mode', state.mode);
+}
+
+async function phoneLogin() {
+  state.error = null;
+  if (DEMO) return doPhone('demo');
+  try {
+    tg.requestContact(function (ok, res) {
+      if (!ok) return;
+      const signed = res && res.response;
+      if (!signed) { state.error = 'phone_old_app'; state.showCode = true; render(); return; }
+      doPhone(signed);
+    });
+  } catch (e) { state.error = 'phone_old_app'; state.showCode = true; render(); }
+}
+async function doPhone(contact) {
+  state.busy = true; render();
+  try {
+    const data = await api('phone_login', { contact: contact });
+    setData(data);
+    state.mode = data.phoneLinked && data.phoneLinked.staff ? 'staff' : 'parent';
+    state.sv = null;
+    route(); haptic('success'); askWriteAccess();
+  } catch (e) { state.error = e.code || 'server_error'; state.showCode = true; haptic('error'); }
+  state.busy = false; render();
+}
+
+/* ---------------- staff screens ---------------- */
+const STAFF_API = {
+  home: () => api('staff_home'),
+  group: p => api('group', { group: p.group }),
+  lesson: p => api('lesson_get', { group: p.group, date: p.date, studentId: p.studentId }),
+  indnew: () => api('student_pick'),
+  students: () => api('students'),
+  student: p => api('student', { studentId: p.studentId }),
+  payments: () => api('payments'),
+  announce: () => api('students'),
+  regs: () => api('registrations'),
+  reg: () => Promise.resolve(null)
+};
+async function openStaff(name, params, push) {
+  if (push !== false && state.sv) state.svStack.push(state.sv);
+  state.sv = Object.assign({}, params || {}, { name: name });
+  state.sLoading = true; state.q = '';
+  if (name === 'student') state.tab = 'lessons';
+  render(); window.scrollTo(0, 0);
+  try {
+    const d = await STAFF_API[name](state.sv);
+    if (d) state.sd = d;
+    if (name === 'lesson') state.lesson = JSON.parse(JSON.stringify(d));
+    if (name === 'indnew') state.pick = { students: d.students, id: '', date: todayIso(1), start: '' };
+    if (name === 'home') state.home = d;
+  } catch (e) {
+    toast(t(e.code || 'server_error'));
+    if (state.svStack.length) { state.sv = state.svStack.pop(); }
+  }
+  state.sLoading = false; render();
+}
+async function refreshStaff() { const cur = state.sv; await openStaff(cur.name, cur, false); }
+function todayIso(plusDays) {
+  const d = new Date(); d.setDate(d.getDate() + (plusDays || 0));
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+const backLink = () => `<button class="back" data-act="sback">‹ ${esc(t('back'))}</button>`;
+const chev = '<span class="chev">›</span>';
+
+function viewStaff() {
+  let html = topBar(true);
+  const v = state.sv || { name: 'home' };
+  if (v.name !== 'home') html += backLink();
+  if (state.sLoading) return html + `<div class="spinwrap"><div class="loader"></div>${esc(t('loading'))}</div>`;
+  const d = state.sd || {};
+  switch (v.name) {
+    case 'home': return html + staffHome(d);
+    case 'group': return html + staffGroup(d);
+    case 'lesson': return html + lessonEditor();
+    case 'indnew': return html + indNew();
+    case 'students': return html + adminStudents(d);
+    case 'student': return html + adminStudent(d.student);
+    case 'payments': return html + adminPayments(d);
+    case 'announce': return html + announceForm(d);
+    case 'regs': return html + adminRegs(d);
+    case 'reg': return html + regDetail();
+  }
+  return html;
+}
+
+function staffHome(d) {
+  const admin = d.staff && d.staff.role === 'admin';
+  let html = `<div class="h1">${esc(t('hello', { name: d.staff ? d.staff.name : '' }))}</div>
+    <div class="sub">${esc(t(admin ? 'roleAdmin' : 'roleTeacher'))} · ${fmtDate(d.today, { weekday: 'long', day: 'numeric', month: 'long' })}</div>`;
+  if (admin && d.kpis) {
+    const k = d.kpis;
+    const tile = (n, l, cls) => `<div class="kpi ${cls || ''}"><div class="n">${n}</div><div class="l">${esc(l)}</div></div>`;
+    html += `<div class="kpis">
+      ${tile(k.activeStudents, t('kStudents'))}
+      ${tile(pctText(k.attendance), t('kAtt'))}
+      ${tile(pctText(k.mark), t('kMark'))}
+      ${tile(k.overdueCount, t('kOverdue') + (k.overdueSum ? ' · ' + money(k.overdueSum) : ''), k.overdueCount ? 'alert' : '')}
+      ${tile(k.dueToday, t('kDueToday'))}
+      ${tile(k.newRegistrations, t('kRegs'), k.newRegistrations ? 'alert' : '')}
+    </div>
+    <div class="navgrid">
+      <button data-act="go" data-v="students"><span class="e">👥</span>${esc(t('navStudents'))}</button>
+      <button data-act="go" data-v="payments"><span class="e">💳</span>${esc(t('navPayments'))}${k.overdueCount ? `<span class="cnt">${k.overdueCount}</span>` : ''}</button>
+      <button data-act="go" data-v="announce"><span class="e">📢</span>${esc(t('navAnnounce'))}</button>
+      <button data-act="go" data-v="regs"><span class="e">📝</span>${esc(t('navRegs'))}${k.newRegistrations ? `<span class="cnt">${k.newRegistrations}</span>` : ''}</button>
+    </div>`;
+  }
+  html += `<div class="sec">${esc(t('myGroups'))}</div>`;
+  html += (d.groups || []).length ? `<div class="list">${d.groups.map(g => `<div class="row tap" data-act="go" data-v="group" data-group="${esc(g.name)}">
+      <div class="main"><div class="t">${esc(g.name)} <span class="muted" style="font-weight:500">· ${esc(g.level)}</span></div>
+      <div class="s">${esc(t('studentsN', { n: g.students }))}${admin && g.teacher ? ' · ' + esc(g.teacher) : ''}${g.lastLesson ? ' · ' + esc(t('lastLesson', { date: fmtDate(g.lastLesson) })) : ''}</div></div>${chev}</div>`).join('')}</div>`
+    : `<div class="list"><div class="empty">${esc(t('noGroups'))}</div></div>`;
+  const ind = d.individual || { upcoming: [], recent: [] };
+  html += `<div class="sec">${esc(t('indLessons'))}<button data-act="go" data-v="indnew">${esc(t('newInd'))}</button></div>`;
+  const indRow = l => `<div class="row tap" data-act="go" data-v="lesson" data-group="Individual" data-date="${esc(l.date)}" data-sid="${esc(l.studentId)}">
+      <div class="main"><div class="t">${esc(l.name)}</div><div class="s">${fmtDate(l.date, { weekday: 'short', day: 'numeric', month: 'short' })}${l.start ? ' · ' + esc(l.start) : ''}${admin && l.teacher ? ' · ' + esc(l.teacher) : ''}</div></div>
+      ${l.status ? `<span class="pill ${({ present: 'g', late: 'm', absent: 'b', excused: 'i' })[l.status] || 'i'}" style="margin-top:0">${esc(t(l.status))}</span>` : ''}${chev}</div>`;
+  if (!ind.upcoming.length && !ind.recent.length) html += `<div class="list"><div class="empty">${esc(t('noInd'))}</div></div>`;
+  if (ind.upcoming.length) html += `<div class="mini" style="margin:0 4px 6px">${esc(t('planned'))}</div><div class="list">${ind.upcoming.map(indRow).join('')}</div>`;
+  if (ind.recent.length) html += `<div class="mini" style="margin:0 4px 6px">${esc(t('recentDone'))}</div><div class="list">${ind.recent.map(indRow).join('')}</div>`;
+  return html;
+}
+
+function staffGroup(d) {
+  const g = d.group || {};
+  let html = `<div class="h1">${esc(g.name)}</div><div class="sub">${esc([g.level, g.teacher, g.schedule, g.room].filter(Boolean).join(' · '))}</div>
+    <button class="btn" data-act="go" data-v="lesson" data-group="${esc(g.name)}" data-date="${esc(d.today)}">${esc(t('lessonToday'))}</button>
+    <div class="formgrid" style="margin-top:8px;align-items:end"><div><div class="mini">${esc(t('otherDate'))}</div><input class="inp" type="date" id="otherDate" value="${esc(d.today)}"></div>
+    <button class="btn ghost" style="padding:11px" data-act="open-date" data-group="${esc(g.name)}">${esc(t('open'))}</button></div>`;
+  html += `<div class="sec">${esc(t('groupStudents'))}</div><div class="list">${(d.students || []).map(s => `<div class="row">
+      <div class="main"><div class="t">${esc(s.name)}</div>
+      <div class="pills" style="justify-content:flex-start;margin:6px 0 4px"><span class="num ${tone(s.attendance)}"><span>${esc(t('attShort'))}</span>${pctText(s.attendance)}</span><span class="num ${tone(s.homework)}"><span>${esc(t('hwShort'))}</span>${pctText(s.homework)}</span><span class="num ${tone(s.mark)}"><span>${esc(t('markShort'))}</span>${pctText(s.mark)}</span></div>
+      <div class="s">${s.lastLesson ? esc(t('lastLesson', { date: fmtDate(s.lastLesson) })) : ''}</div></div></div>`).join('') || `<div class="empty">—</div>`}</div>`;
+  html += `<div class="sec">${esc(t('pastLessons'))}</div><div class="list">${(d.lessons || []).map(l => `<div class="row tap" data-act="go" data-v="lesson" data-group="${esc(g.name)}" data-date="${esc(l.date)}">
+      <div class="main"><div class="t">${fmtDate(l.date, { weekday: 'short', day: 'numeric', month: 'short' })}</div>
+      <div class="s">${esc(t('markedN', { m: l.marked, n: l.total }))}${l.absent ? ' · ' + esc(t('absentN', { n: l.absent })) : ''}</div></div>${chev}</div>`).join('') || `<div class="empty">${esc(t('noLessons'))}</div>`}</div>`;
+  return html;
+}
+
+const ATT = ['present', 'late', 'absent', 'excused'];
+const ATT_LABEL = { present: 'stPresent', late: 'stLate', absent: 'stAbsent', excused: 'stExcused' };
+function lessonEditor() {
+  const L = state.lesson;
+  if (!L) return '';
+  const ind = L.group === 'Individual';
+  let html = `<div class="h1">${esc(ind ? t('indLessonWith') : t('lessonOf') + ' · ' + L.group)}</div>
+    <div class="sub">${ind ? esc(L.entries[0].name) + (L.teacher ? ' · ' + esc(L.teacher) : '') : fmtDate(L.date, { weekday: 'long', day: 'numeric', month: 'long' })}</div>
+    <div class="formgrid"><div class="field"><label>${esc(t('date'))}</label><input class="inp" type="date" data-lf="date" value="${esc(L.date)}"></div>
+    <div class="field"><label>${esc(t('startTime'))}</label><input class="inp" type="time" data-lf="start" value="${esc(L.start || '')}"></div></div>
+    ${ind ? '' : `<button class="btn ghost" style="padding:10px;margin-bottom:10px" data-act="allpresent">✓ ${esc(t('allPresent'))}</button>`}`;
+  L.entries.forEach((e, i) => {
+    const attended = e.status === 'present' || e.status === 'late';
+    html += `<div class="card stu">
+      <div class="top2"><span class="nm">${esc(e.name)}</span>${e.notified && e.status === 'absent' ? `<span class="muted">✉️ ${esc(t('msgSent'))}</span>` : ''}</div>
+      <div class="att">${ATT.map(a => `<button class="${a} ${e.status === a ? 'on' : ''}" data-act="st" data-i="${i}" data-v="${a}">${esc(t(ATT_LABEL[a]))}</button>`).join('')}</div>
+      ${attended ? `<div class="nums3">
+        ${e.status === 'late' ? `<div><div class="mini">${esc(t('arrival'))}</div><input class="inp" type="time" data-ef="arrival" data-i="${i}" value="${esc(e.arrival || '')}"></div>` : '<div></div>'}
+        <div><div class="mini">${esc(t('hwPct'))}</div><input class="inp" type="number" inputmode="numeric" min="0" max="100" data-ef="homework" data-i="${i}" value="${e.homework == null ? '' : e.homework}"></div>
+        <div><div class="mini">${esc(t('markPct'))}</div><input class="inp" type="number" inputmode="numeric" min="0" max="100" data-ef="mark" data-i="${i}" value="${e.mark == null ? '' : e.mark}"></div>
+      </div>` : ''}
+      ${e.status ? `<input class="inp" data-ef="comment" data-i="${i}" maxlength="300" placeholder="${esc(t('commentPh'))}" value="${esc(e.comment || '')}">` : ''}
+    </div>`;
+  });
+  html += `<div class="savebar"><button class="btn" data-act="save-lesson" ${state.busy ? 'disabled' : ''}>${esc(t(state.busy ? 'saving' : 'save'))}</button>
+    ${ind && L.exists && !L.entries[0].status ? `<div style="text-align:center;margin-top:8px"><button class="link-danger" data-act="cancel-ind">${esc(t('cancelLesson'))}</button></div>` : ''}</div>`;
+  return html;
+}
+
+function numOrNull(v) { return v === '' || v == null || isNaN(Number(v)) ? null : Number(v); }
+async function saveLesson() {
+  const L = state.lesson;
+  for (const e of L.entries) {
+    for (const k of ['homework', 'mark']) {
+      const v = e[k];
+      if (v !== '' && v != null && (isNaN(Number(v)) || Number(v) < 0 || Number(v) > 100)) { toast(t('bad_request')); return; }
+    }
+  }
+  state.busy = true; render();
+  try {
+    const r = await api('lesson_save', {
+      group: L.group, date: L.date, start: L.start || '',
+      entries: L.entries.map(e => ({ studentId: e.studentId, status: e.status || '', arrival: e.arrival || '', homework: numOrNull(e.homework), mark: numOrNull(e.mark), comment: e.comment || '' }))
+    });
+    haptic('success');
+    toast(r.absenceAlerts ? t('savedAbs', { n: r.absenceAlerts }) : t('saved'));
+    state.busy = false;
+    if (state.svStack.length) { const prev = state.svStack.pop(); await openStaff(prev.name, prev, false); return; }
+  } catch (e) { haptic('error'); toast(t(e.code || 'server_error')); }
+  state.busy = false; render();
+}
+
+function indNew() {
+  const P = state.pick;
+  if (!P) return '';
+  const chosen = P.students.find(x => x.id === P.id);
+  let html = `<div class="h1">${esc(t('newIndTitle'))}</div><div class="sub">${esc(t('chooseStudent'))}</div>`;
+  if (!chosen) {
+    html += `<input class="inp" id="q" data-search="pick" placeholder="🔍 ${esc(t('search'))}" value="${esc(state.q)}" style="margin-bottom:10px"><div class="list" id="pickList">${pickList()}</div>`;
+  } else {
+    html += `<div class="list"><div class="row tap" data-act="unpick"><div class="main"><div class="t">${esc(chosen.name)}</div><div class="s">${esc(chosen.group)}</div></div><span class="muted">✕</span></div></div>
+      <div class="formgrid"><div class="field"><label>${esc(t('date'))}</label><input class="inp" type="date" data-pf="date" value="${esc(P.date)}"></div>
+      <div class="field"><label>${esc(t('startTime'))}</label><input class="inp" type="time" data-pf="start" value="${esc(P.start)}"></div></div>
+      <button class="btn" data-act="create-ind" ${state.busy ? 'disabled' : ''}>${esc(t('create'))}</button>`;
+  }
+  return html;
+}
+function pickList() {
+  const q = state.q.trim().toLowerCase();
+  const list = state.pick.students.filter(x => !q || x.name.toLowerCase().includes(q) || x.group.toLowerCase().includes(q)).slice(0, 60);
+  return list.map(x => `<div class="row tap" data-act="pick" data-id="${esc(x.id)}"><div class="main"><div class="t">${esc(x.name)}</div><div class="s">${esc(x.group)}</div></div>${chev}</div>`).join('') || `<div class="empty">—</div>`;
+}
+
+const PAY_LABEL = { overdue: 'payOver', due_soon: 'paySoon', ok: 'payOk' };
+function adminStudents(d) {
+  return `<div class="h1">${esc(t('students'))}</div><div class="sub">${(d.students || []).length}</div>
+    <input class="inp" id="q" data-search="students" placeholder="🔍 ${esc(t('search'))}" value="${esc(state.q)}" style="margin-bottom:10px">
+    <div class="list" id="stuList">${studentsList()}</div>`;
+}
+function studentsList() {
+  const q = state.q.trim().toLowerCase();
+  const list = (state.sd.students || []).filter(x => !q || (x.name + ' ' + x.group + ' ' + x.id).toLowerCase().includes(q));
+  return list.map(x => `<div class="row tap" data-act="go" data-v="student" data-sid="${esc(x.id)}">
+    <div class="main"><div class="t">${esc(x.name)}</div><div class="s">${esc([x.group, x.status !== 'Active' ? statusLabel(x.status) : '', x.alert].filter(Boolean).join(' · '))}</div></div>
+    ${x.payment && x.payment !== 'ok' ? `<span class="pill ${x.payment === 'overdue' ? 'b' : 'm'}" style="margin-top:0">${esc(t(PAY_LABEL[x.payment]))}</span>` : ''}${chev}</div>`).join('') || `<div class="empty">—</div>`;
+}
+function adminStudent(s) {
+  if (!s) return '';
+  const c = s.contacts || {};
+  const tel = p => p ? `<a href="tel:${esc(p.replace(/[^\d+]/g, ''))}">${esc(p)}</a>` : '—';
+  const tgl = u => u ? `<a href="https://t.me/${esc(u.replace(/^@/, ''))}" target="_blank">${esc(u)}</a>` : '—';
+  const contacts = `<div class="card"><div class="k" style="font-size:12px;font-weight:700;color:var(--hint);text-transform:uppercase;margin-bottom:8px">${esc(t('contacts'))}</div><div class="kv">
+    <div class="k">${esc(t('dob'))}</div><div>${c.dob ? fmtDate(c.dob, { day: 'numeric', month: 'long', year: 'numeric' }) : '—'}${c.age ? ` (${esc(c.age)})` : ''}</div>
+    <div class="k">${esc(t('contactThrough'))}</div><div>${esc(c.contactThrough || '—')}</div>
+    <div class="k">${esc(t('studentPhone'))}</div><div>${tel(c.studentPhone)}</div>
+    <div class="k">${esc(t('studentTg'))}</div><div>${tgl(c.studentTelegram)}</div>
+    <div class="k">${esc(t('parentName'))}</div><div>${esc(c.parentName || '—')}${c.parentRelation ? ` (${esc(c.parentRelation)})` : ''}</div>
+    <div class="k">${esc(t('parentPhone'))}</div><div>${tel(c.parentPhone)}</div>
+    <div class="k">${esc(t('parentTg'))}</div><div>${tgl(c.parentTelegram)}</div>
+    <div class="k">${esc(t('accessCode'))}</div><div>${s.accessCode ? `<span class="code-chip">${esc(s.accessCode)}</span>` : '—'}</div>
+    <div class="k">${esc(t('linkedAcc'))}</div><div>${s.linkedAccounts}</div>
+    ${s.adminNotes ? `<div class="k">${esc(t('adminNotes'))}</div><div>${esc(s.adminNotes)}</div>` : ''}
+  </div></div>`;
+  return studentBody(s, null, contacts);
+}
+
+function adminPayments(d) {
+  const tabs = [['overdue', 'overdueTab', d.overdue || []], ['soon', 'upcomingTab', d.soon || []], ['paid', 'paidTab', d.paid || []]];
+  const cur = tabs.find(x => x[0] === state.payTab) || tabs[0];
+  return `<div class="h1">${esc(t('navPayments'))}</div><div class="sub"></div>
+    <div class="seg2" style="margin-bottom:12px">${tabs.map(x => `<button data-act="paytab" data-v="${x[0]}" class="${x[0] === cur[0] ? 'on' : ''}">${esc(t(x[1]))} (${x[2].length})</button>`).join('')}</div>
+    <div class="list">${cur[2].map(p => `<div class="row" style="align-items:center">
+      <div class="main"><div class="t">${esc(p.name)}</div><div class="s">${esc(p.group || '')} · ${fmtDate(p.due, { day: 'numeric', month: 'short' })} · ${esc(payWhen(p))}</div></div>
+      <div class="score"><div class="big">${money(p.amount)}</div>
+      ${p.status === 'paid' ? `<span class="pill g">${esc(t('st_paid'))}</span>` : `<button class="pill ${PAY_TONE[p.status] || 'i'}" style="border:0;cursor:pointer" data-act="markpaid" data-row="${p.row}">${esc(t('markPaid'))} ✓</button>`}</div>
+    </div>`).join('') || `<div class="empty">—</div>`}</div>`;
+}
+async function markPaid(row) {
+  const all = [].concat(state.sd.overdue || [], state.sd.soon || []);
+  const p = all.find(x => String(x.row) === String(row));
+  if (!p) return;
+  if (!(await confirmBox(t('markPaidConfirm', { name: p.name, amount: money(p.amount) })))) return;
+  try {
+    state.sd = await api('payment_mark', { row: p.row, label: p.label, due: p.due });
+    haptic('success'); toast(t('markedPaid'));
+  } catch (e) { toast(t(e.code || 'server_error')); }
+  render();
+}
+
+function announceForm(d) {
+  const A = state.ann;
+  const groups = (state.home && state.home.groups || []).map(g => g.name);
+  const studs = d.students || [];
+  return `<div class="h1">${esc(t('annTitle'))}</div><div class="sub"></div>
+    <div class="field"><label>${esc(t('audience'))}</label><select class="sel" data-af="audience">
+      <option value="All" ${A.audience === 'All' ? 'selected' : ''}>${esc(t('audAll'))}</option>
+      ${groups.map(g => `<option value="${esc(g)}" ${A.audience === g ? 'selected' : ''}>${esc(g)}</option>`).join('')}
+      <option value="__family" ${A.audience === '__family' ? 'selected' : ''}>${esc(t('audFamily'))}</option></select></div>
+    ${A.audience === '__family' ? `<div class="field"><select class="sel" data-af="family"><option value="">${esc(t('choose'))}</option>${studs.filter(x => x.status !== 'Left').map(x => `<option value="${esc(x.id)}" ${A.family === x.id ? 'selected' : ''}>${esc(x.name)} · ${esc(x.group)}</option>`).join('')}</select></div>` : ''}
+    <div class="field"><label>${esc(t('title'))}</label><input class="inp" data-af="title" maxlength="100" value="${esc(A.title)}"></div>
+    <div class="field"><label>${esc(t('message'))}</label><textarea class="txt" data-af="message" maxlength="2000">${esc(A.message)}</textarea></div>
+    <button class="btn" data-act="send-ann" ${state.busy ? 'disabled' : ''}>📢 ${esc(t('send'))}</button>`;
+}
+async function sendAnnouncement() {
+  const A = state.ann;
+  const audience = A.audience === '__family' ? A.family : A.audience;
+  if (!A.title.trim() || !A.message.trim() || !audience) { toast(t('form_invalid')); return; }
+  try {
+    const pv = await api('announce_preview', { title: A.title, message: A.message, audience: audience });
+    if (!pv.recipients) { toast(t('noRecipients')); return; }
+    if (!(await confirmBox(t('sendConfirm', { n: pv.recipients })))) return;
+    state.busy = true; render();
+    const r = await api('announce', { title: A.title, message: A.message, audience: audience });
+    haptic('success'); toast(t('sentN', { n: r.sent }));
+    state.ann = { audience: 'All', title: '', message: '', family: '' };
+  } catch (e) { toast(t(e.code || 'server_error')); }
+  state.busy = false; render();
+}
+
+const REG_TONE = { new: 'm', contacted: 'i', approved: 'g', rejected: 'i' };
+function adminRegs(d) {
+  return `<div class="h1">${esc(t('regsTitle'))}</div><div class="sub"></div><div class="list">${(d.registrations || []).map(r => `<div class="row tap" data-act="go" data-v="reg" data-row="${r.row}">
+    <div class="main"><div class="t">${esc(r.studentName)}${r.age != null ? ` <span class="muted" style="font-weight:500">(${r.age})</span>` : ''}</div>
+    <div class="s">${fmtDate(r.submitted)} · ${esc([r.level, r.goal].filter(Boolean).join(' · '))}</div></div>
+    <span class="pill ${REG_TONE[r.status] || 'i'}" style="margin-top:0">${esc(t('reg_' + r.status))}</span>${chev}</div>`).join('') || `<div class="empty">${esc(t('noRegs'))}</div>`}</div>`;
+}
+function regDetail() {
+  const d = state.sd || {};
+  const r = (d.registrations || []).find(x => String(x.row) === String(state.sv.row));
+  if (!r) return '';
+  const tel = p => p ? `<a href="tel:${esc(p.replace(/[^\d+]/g, ''))}">${esc(p)}</a>` : '—';
+  const tgl = u => u ? `<a href="https://t.me/${esc(u.replace(/^@/, ''))}" target="_blank">${esc(u)}</a>` : '—';
+  const A = state.approve;
+  if (!A.group) A.group = (d.groups[0] || {}).name || '';
+  if (!A.start) A.start = todayIso();
+  const open = r.status !== 'approved' && r.status !== 'rejected';
+  return `<div class="h1">${esc(r.studentName)}</div><div class="sub">${esc(t('reg_' + r.status))} · ${fmtDate(r.submitted)}</div>
+    <div class="card"><div class="kv">
+      <div class="k">${esc(t('dob'))}</div><div>${r.dob ? fmtDate(r.dob, { day: 'numeric', month: 'long', year: 'numeric' }) : '—'}${r.age != null ? ` (${r.age})` : ''}</div>
+      <div class="k">${esc(t('fLevel'))}</div><div>${esc(r.level || '—')}</div>
+      <div class="k">${esc(t('fGoal'))}</div><div>${esc(r.goal || '—')}</div>
+      <div class="k">${esc(t('fDays'))}</div><div>${esc(r.days || '—')}</div>
+      <div class="k">${esc(t('fTime'))}</div><div>${esc(r.time || '—')}</div>
+      <div class="k">${esc(t('contactThrough'))}</div><div>${esc(r.contactThrough)}</div>
+      <div class="k">${esc(t('parentName'))}</div><div>${esc(r.parentName || '—')}${r.parentRelation ? ` (${esc(r.parentRelation)})` : ''}</div>
+      <div class="k">${esc(t('parentPhone'))}</div><div>${tel(r.parentPhone)}</div>
+      <div class="k">${esc(t('parentTg'))}</div><div>${tgl(r.parentTelegram)}</div>
+      <div class="k">${esc(t('studentPhone'))}</div><div>${tel(r.studentPhone)}</div>
+      <div class="k">${esc(t('studentTg'))}</div><div>${tgl(r.studentTelegram)}</div>
+      <div class="k">${esc(t('fSource'))}</div><div>${esc(r.source || '—')}</div>
+      <div class="k">${esc(t('fComment'))}</div><div>${esc(r.comment || '—')}</div>
+      ${r.studentId ? `<div class="k">ID</div><div>${esc(r.studentId)}</div>` : ''}
+    </div></div>
+    ${open ? `<div class="card"><div class="formgrid">
+      <div class="field"><label>${esc(t('approveGroup'))}</label><select class="sel" data-apf="group">${d.groups.map(g => `<option value="${esc(g.name)}" ${A.group === g.name ? 'selected' : ''}>${esc(g.name)}${g.fee ? ' · ' + money(g.fee) : ''}</option>`).join('')}</select></div>
+      <div class="field"><label>${esc(t('approveStart'))}</label><input class="inp" type="date" data-apf="start" value="${esc(A.start)}"></div></div>
+      <button class="btn" data-act="approve" data-row="${r.row}" ${state.busy ? 'disabled' : ''}>✓ ${esc(t('approve'))}</button>
+      <div class="formgrid" style="margin-top:8px">
+        ${r.status === 'new' ? `<button class="btn ghost" style="padding:11px" data-act="reg-contacted" data-row="${r.row}">📞 ${esc(t('contacted'))}</button>` : '<div></div>'}
+        <button class="btn ghost" style="padding:11px;color:var(--danger)" data-act="reg-reject" data-row="${r.row}">${esc(t('reject'))}</button>
+      </div></div>` : ''}`;
+}
+async function regAction(kind, row) {
+  const r = state.sd.registrations.find(x => String(x.row) === String(row));
+  if (!r) return;
+  if (kind === 'reject' && !(await confirmBox(t('rejectConfirm')))) return;
+  state.busy = true; render();
+  try {
+    const action = kind === 'approve' ? 'registration_approve' : kind === 'reject' ? 'registration_reject' : 'registration_contacted';
+    const res = await api(action, { row: r.row, studentName: r.studentName, group: state.approve.group, startDate: state.approve.start });
+    const keepRow = r.row;
+    state.sd = res;
+    state.sv.row = keepRow;
+    haptic('success');
+    if (res.approved) toast(t('approvedMsg', { id: res.approved.studentId, code: res.approved.code }));
+  } catch (e) { toast(t(e.code || 'server_error')); }
+  state.busy = false; render();
+}
+
+/* ---------------- registration form (parents) ---------------- */
+const REG_OPTS = {
+  level: [['Beginner', 'lv_beginner'], ['Elementary', 'lv_elementary'], ['Pre-Intermediate', 'lv_pre'], ['Intermediate', 'lv_int'], ['Upper-Intermediate', 'lv_upper'], ['Advanced', 'lv_adv'], ["Don't know", 'lv_dk']],
+  goal: [['General English', 'g_general'], ['IELTS', 'g_ielts'], ['School support', 'g_school'], ['Kids English', 'g_kids'], ['Speaking', 'g_speaking'], ['Other', 'g_other']],
+  time: [['Morning', 't_morning'], ['Afternoon', 't_afternoon'], ['Evening', 't_evening']],
+  relation: [['Mother', 'r_mother'], ['Father', 'r_father'], ['Guardian', 'r_guardian'], ['Other', 'r_other']],
+  source: [['Instagram', 's_instagram'], ['Telegram', 's_telegram'], ['Friends', 's_friends'], ['Google', 's_google'], ['Street banner', 's_banner'], ['Other', 's_other']],
+  days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  contact: [['Parent', 'cParent'], ['Student', 'cStudent'], ['Both', 'cBoth']]
+};
+function newReg() {
+  return { studentName: '', dob: '', level: '', goal: '', days: [], time: [], contactThrough: 'Parent', parentName: '', parentRelation: '', parentPhone: '',
+           parentTelegram: '', studentPhone: '', studentTelegram: '', source: '', comment: '', consent: false };
+}
+function viewRegister() {
+  const R = state.reg || (state.reg = newReg());
+  const bad = k => state.regBad.includes(k) ? 'bad' : '';
+  const req = '<i>*</i>';
+  const fld = (k, label, input, required, hint) => `<div class="field ${bad(k)}"><label>${esc(label)} ${required ? req : `<span class="muted" style="font-weight:400">(${esc(t('optional'))})</span>`}</label>${input}${hint ? `<div class="hint muted">${esc(hint)}</div>` : ''}</div>`;
+  const inp = (k, type, extra) => `<input class="inp" type="${type || 'text'}" data-rf="${k}" value="${esc(R[k])}" ${extra || ''}>`;
+  const sel = (k, opts) => `<select class="sel" data-rf="${k}"><option value="">${esc(t('choose'))}</option>${opts.map(o => `<option value="${esc(o[0])}" ${R[k] === o[0] ? 'selected' : ''}>${esc(t(o[1]))}</option>`).join('')}</select>`;
+  if (state.regDone) {
+    return topBar(false) + `<div class="card okbox"><div class="big">✅</div><div class="h1">${esc(t('regDone'))}</div><div class="sub">${esc(t('regDone2'))}</div>
+      <button class="btn ghost" data-act="sback">${esc(t('back'))}</button></div>`;
+  }
+  const needParent = R.contactThrough !== 'Student', needStudent = R.contactThrough !== 'Parent';
+  return topBar(false) + backLink() + `<div class="h1">${esc(t('regTitle'))}</div><div class="sub">${esc(t('regIntro'))}</div>
+    ${fld('studentName', t('fStudentName'), inp('studentName', 'text', 'maxlength="100" autocomplete="name"'), true)}
+    ${fld('dob', t('fDob'), inp('dob', 'date', `max="${todayIso()}"`), true)}
+    <div class="formgrid">${fld('level', t('fLevel'), sel('level', REG_OPTS.level))}${fld('goal', t('fGoal'), sel('goal', REG_OPTS.goal))}</div>
+    ${fld('days', t('fDays'), `<div class="chips">${REG_OPTS.days.map(dn => `<button data-act="rchip" data-k="days" data-v="${dn}" class="${R.days.includes(dn) ? 'on' : ''}">${esc(t('d_' + dn))}</button>`).join('')}</div>`)}
+    ${fld('time', t('fTime'), `<div class="chips">${REG_OPTS.time.map(o => `<button data-act="rchip" data-k="time" data-v="${o[0]}" class="${R.time.includes(o[0]) ? 'on' : ''}">${esc(t(o[1]))}</button>`).join('')}</div>`)}
+    ${fld('contactThrough', t('fContact'), `<div class="seg2">${REG_OPTS.contact.map(o => `<button data-act="rcontact" data-v="${o[0]}" class="${R.contactThrough === o[0] ? 'on' : ''}">${esc(t(o[1]))}</button>`).join('')}</div>`, true)}
+    ${needParent ? `${fld('parentName', t('fParentName'), inp('parentName', 'text', 'maxlength="100"'), true)}
+      <div class="formgrid">${fld('parentRelation', t('fRelation'), sel('parentRelation', REG_OPTS.relation))}${fld('parentPhone', t('fParentPhone'), inp('parentPhone', 'tel', 'inputmode="tel" placeholder="+998"'), true)}</div>
+      ${fld('parentTelegram', t('fParentTg'), inp('parentTelegram', 'text', 'placeholder="@username" autocapitalize="off"'))}` : ''}
+    ${needStudent ? `${fld('studentPhone', t('fStudentPhone'), inp('studentPhone', 'tel', 'inputmode="tel" placeholder="+998"'), true, t('phoneHint'))}
+      ${fld('studentTelegram', t('fStudentTg'), inp('studentTelegram', 'text', 'placeholder="@username" autocapitalize="off"'))}` : ''}
+    ${fld('source', t('fSource'), sel('source', REG_OPTS.source))}
+    ${fld('comment', t('fComment'), `<textarea class="txt" data-rf="comment" maxlength="500">${esc(R.comment)}</textarea>`)}
+    <div class="field ${bad('consent')}"><label class="check"><input type="checkbox" data-rf="consent" ${R.consent ? 'checked' : ''}><span>${esc(t('fConsent'))}</span></label></div>
+    ${state.regBad.length ? `<div class="err">${esc(t('form_invalid'))}</div>` : ''}
+    <button class="btn" data-act="reg-submit" ${state.busy ? 'disabled' : ''}>${esc(t(state.busy ? 'sending' : 'submit'))}</button>
+    <div style="height:20px"></div>`;
+}
+function regClientCheck(R) {
+  const bad = [];
+  const ph = p => String(p || '').replace(/\D/g, '').length >= 9;
+  if (R.studentName.trim().length < 2) bad.push('studentName');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(R.dob) || R.dob > todayIso()) bad.push('dob');
+  if (R.contactThrough !== 'Student') { if (R.parentName.trim().length < 2) bad.push('parentName'); if (!ph(R.parentPhone)) bad.push('parentPhone'); }
+  if (R.contactThrough !== 'Parent' && !ph(R.studentPhone)) bad.push('studentPhone');
+  if (!R.consent) bad.push('consent');
+  return bad;
+}
+async function submitReg() {
+  const R = state.reg;
+  state.regBad = regClientCheck(R);
+  if (state.regBad.length) { haptic('error'); render(); const el = document.querySelector('.bad'); if (el) el.scrollIntoView({ block: 'center' }); return; }
+  state.busy = true; render();
+  try {
+    const form = Object.assign({}, R, { days: R.days.join(', '), time: R.time.join(', ') });
+    if (R.contactThrough === 'Student') { form.parentName = ''; form.parentPhone = ''; form.parentTelegram = ''; form.parentRelation = ''; }
+    if (R.contactThrough === 'Parent') { form.studentPhone = ''; form.studentTelegram = ''; }
+    const res = await api('register', { form: form });
+    if (state.data) state.data.registrations = res.registrations;
+    state.regDone = true; state.reg = null; haptic('success');
+  } catch (e) {
+    if (e.fields) state.regBad = e.fields;
+    toast(t(e.code || 'server_error')); haptic('error');
+  }
+  state.busy = false; render();
+}
+
 /* ---------------- render + events ---------------- */
 const app = document.getElementById('app');
 function render() {
   document.documentElement.lang = state.lang;
   const v = state.view;
-  app.innerHTML = v === 'loading' ? viewLoading() : v === 'error' ? viewError() : v === 'connect' ? viewConnect() : viewDash();
+  app.innerHTML = v === 'loading' ? viewLoading() : v === 'error' ? viewError() : v === 'connect' ? viewConnect()
+    : v === 'register' ? viewRegister() : v === 'staff' ? viewStaff() : viewDash();
   syncBackButton();
-  if (v === 'connect') {
+  if (v === 'connect' && state.showCode) {
     const input = document.getElementById('code');
     if (input && !state.busy) setTimeout(() => input.focus(), 50);
   }
 }
 
 app.addEventListener('click', e => {
-  const b = e.target.closest('button');
+  const b = e.target.closest('button, .row.tap');
   if (!b) return;
+  if (b.tagName === 'BUTTON' && b.type === 'submit' && b.form) return;
   if (b.dataset.lang) { state.lang = b.dataset.lang; store.set('lang', state.lang); render(); return; }
   if (b.dataset.kid) { state.kid = b.dataset.kid; store.set('kid', state.kid); render(); window.scrollTo(0, 0); return; }
   if (b.dataset.tab) { state.tab = b.dataset.tab; render(); return; }
   const act = b.dataset.act;
-  if (act === 'refresh' && !state.refreshing) load(true);
+  if (act === 'refresh' && !state.refreshing) { if (state.view === 'staff' && state.sv) refreshStaff(); else load(true); }
   if (act === 'retry') { state.view = 'loading'; render(); load(false); }
   if (act === 'add') { state.view = 'connect'; state.error = null; state.lastCode = ''; render(); }
-  if (act === 'back') { state.view = 'dash'; state.error = null; render(); }
+  if (act === 'back') { state.error = null; route(); render(); }
   if (act === 'remove') removeKid(b.dataset.id);
+  if (act === 'admin-off') adminOff();
+  if (act === 'phone') phoneLogin();
+  if (act === 'show-code') { state.showCode = true; state.error = null; render(); }
+  if (act === 'register') { state.view = 'register'; state.regDone = false; state.regBad = []; render(); window.scrollTo(0, 0); }
+  if (act === 'mode') { state.mode = b.dataset.v; store.set('mode', state.mode); state.sv = null; state.tab = 'lessons'; route(); render(); }
+  if (act === 'sback') goBack();
+  if (act === 'go') {
+    const v = b.dataset.v;
+    if (v === 'reg') { state.svStack.push(state.sv); state.sv = { name: 'reg', row: b.dataset.row }; state.approve = { group: '', start: '' }; render(); window.scrollTo(0, 0); return; }
+    openStaff(v, { group: b.dataset.group, date: b.dataset.date, studentId: b.dataset.sid });
+  }
+  if (act === 'open-date') { const d = document.getElementById('otherDate').value; if (d) openStaff('lesson', { group: b.dataset.group, date: d }); }
+  if (act === 'st') { const L = state.lesson, en = L.entries[+b.dataset.i]; en.status = en.status === b.dataset.v ? '' : b.dataset.v; render(); }
+  if (act === 'allpresent') { state.lesson.entries.forEach(en => { if (!en.status) en.status = 'present'; }); render(); }
+  if (act === 'save-lesson' && !state.busy) saveLesson();
+  if (act === 'cancel-ind') {
+    confirmBox(t('cancelConfirm')).then(async ok => {
+      if (!ok) return;
+      try { await api('ind_cancel', { date: state.lesson.date, studentId: state.lesson.entries[0].studentId }); goBack(); }
+      catch (err) { toast(t(err.code || 'server_error')); }
+    });
+  }
+  if (act === 'pick') { state.pick.id = b.dataset.id; render(); }
+  if (act === 'unpick') { state.pick.id = ''; render(); }
+  if (act === 'create-ind' && !state.busy) {
+    const P = state.pick;
+    state.busy = true; render();
+    api('lesson_save', { group: 'Individual', date: P.date, start: P.start || '', entries: [{ studentId: P.id }] })
+      .then(() => { haptic('success'); toast(t('created')); state.busy = false; goBack(); })
+      .catch(err => { state.busy = false; toast(t(err.code || 'server_error')); render(); });
+  }
+  if (act === 'paytab') { state.payTab = b.dataset.v; render(); }
+  if (act === 'markpaid') markPaid(b.dataset.row);
+  if (act === 'send-ann' && !state.busy) sendAnnouncement();
+  if (act === 'approve' && !state.busy) regAction('approve', b.dataset.row);
+  if (act === 'reg-reject' && !state.busy) regAction('reject', b.dataset.row);
+  if (act === 'reg-contacted' && !state.busy) regAction('contacted', b.dataset.row);
+  if (act === 'rchip') { const arr = state.reg[b.dataset.k], i = arr.indexOf(b.dataset.v); i >= 0 ? arr.splice(i, 1) : arr.push(b.dataset.v); render(); }
+  if (act === 'rcontact') { state.reg.contactThrough = b.dataset.v; state.regBad = []; render(); }
+  if (act === 'reg-submit' && !state.busy) submitReg();
 });
+
+/* typing updates state without re-rendering (keeps the keyboard open) */
+function onField(e) {
+  const el = e.target, ds = el.dataset;
+  const val = el.type === 'checkbox' ? el.checked : el.value;
+  if (ds.ef !== undefined) { state.lesson.entries[+ds.i][ds.ef] = val; return; }
+  if (ds.lf !== undefined) {
+    state.lesson[ds.lf] = val;
+    if (ds.lf === 'date' && e.type === 'change' && val) {   // another date → load that lesson
+      const L = state.lesson;
+      openStaff('lesson', { group: L.group, date: val, studentId: L.group === 'Individual' ? L.entries[0].studentId : undefined }, false);
+    }
+    return;
+  }
+  if (ds.pf !== undefined) { state.pick[ds.pf] = val; return; }
+  if (ds.af !== undefined) { state.ann[ds.af] = val; if (ds.af === 'audience' && e.type === 'change') render(); return; }
+  if (ds.apf !== undefined) { state.approve[ds.apf] = val; return; }
+  if (ds.rf !== undefined) {
+    state.reg[ds.rf] = val;
+    if (state.regBad.includes(ds.rf)) { state.regBad = state.regBad.filter(k => k !== ds.rf); const f = el.closest('.field'); if (f) f.classList.remove('bad'); }
+    return;
+  }
+  if (ds.search) {
+    state.q = val;
+    const box = document.getElementById(ds.search === 'pick' ? 'pickList' : 'stuList');
+    if (box) box.innerHTML = ds.search === 'pick' ? pickList() : studentsList();
+  }
+}
+app.addEventListener('input', onField);
+app.addEventListener('change', onField);
 app.addEventListener('submit', e => {
   if (e.target.id !== 'codeForm') return;
   e.preventDefault();
@@ -632,7 +1467,19 @@ function demoStats(lessons) {
     avgMinutesLate: avg(lessons.filter(l => l.status === 'late').map(l => l.minutesLate)),
     homework: avg(lessons.map(l => l.homework)), mark: avg(lessons.map(l => l.mark)) }, c);
 }
-function demoStudent(base, lessons, groupHw, groupMark) {
+function demoPayments(startDay, fee, unpaidOct) {
+  const out = [];
+  [['2026-09', true], ['2026-10', !unpaidOct], ['2026-11', false]].forEach(([m, paid]) => {
+    const due = `${m}-${String(startDay).padStart(2, '0')}`;
+    const diff = Math.round((new Date(due) - new Date('2026-10-31')) / 864e5);
+    if (diff > 7) return;
+    const status = paid ? 'paid' : diff < 0 ? 'overdue' : diff === 0 ? 'due_today' : diff <= 3 ? 'due_soon' : 'upcoming';
+    out.push({ due, amount: fee, paid, paidOn: paid ? due : '', status, days: paid ? null : Math.abs(diff) });
+  });
+  return out.reverse();
+}
+function demoStudent(base, lessons, groupHw, groupMark, payments) {
+  base.payments = payments || [];
   const stats = Object.assign(demoStats(lessons), { groupHomework: groupHw, groupMark: groupMark });
   const months = {};
   lessons.forEach(l => (months[l.date.slice(0, 7)] = months[l.date.slice(0, 7)] || []).push(l));
@@ -644,31 +1491,138 @@ const DEMO_DB = {
   students: {
     K7M2QX: demoStudent({ id: 'ST-0001', name: 'Aziz Karimov', level: 'Intermediate', group: 'INT-1', status: 'Active', startDate: '2026-09-01',
       comment: 'Great progress in speaking this month. Please practise irregular verbs at home.', teacher: 'Mr. Jasur', schedule: 'Tue / Thu / Sat, 18:00–19:30', room: 'Room 1' },
-      demoLessons(42, [2, 4, 6], 18, { att: 0.95, late: 0.12, hw: 85, mark: 84 }), 68, 70),
+      demoLessons(42, [2, 4, 6], 18, { att: 0.95, late: 0.12, hw: 85, mark: 84 }), 68, 70, demoPayments(3, 750000, false)),
     J6RV2T: demoStudent({ id: 'ST-0007', name: 'Sardor Nazarov', level: 'Elementary', group: 'ELEM-1', status: 'Active', startDate: '2026-09-08',
       comment: '', teacher: 'Ms. Nigora', schedule: 'Mon / Wed / Fri, 16:00–17:30', room: 'Room 2' },
-      demoLessons(7, [1, 3, 5], 16, { att: 0.93, late: 0.1, hw: 62, mark: 58 }), 82, 79)
+      demoLessons(7, [1, 3, 5], 16, { att: 0.93, late: 0.1, hw: 62, mark: 58 }), 82, 79, demoPayments(20, 600000, true))
   },
   announcements: [
     { date: '2026-10-27', title: 'Autumn break', message: 'No lessons from November 2 to November 4. Classes resume on November 5.', audience: 'All' },
     { date: '2026-10-20', title: 'Speaking club', message: 'Free speaking club for INT-1 this Saturday at 11:00 in Room 1.', audience: 'INT-1' }]
 };
-let demoLinked = ['K7M2QX'];
+/* demo school for staff screens (outside Telegram only) */
+const DEMO_ROSTER = [
+  ['ST-0001', 'Aziz Karimov', 'INT-1', 'K7M2QX'], ['ST-0006', 'Nodira Saidova', 'INT-1'], ['ST-0008', 'Timur Rakhimov', 'INT-1'],
+  ['ST-0004', 'Kamila Ergasheva', 'ELEM-1'], ['ST-0005', 'Madina Yusupova', 'ELEM-1'], ['ST-0007', 'Sardor Nazarov', 'ELEM-1', 'J6RV2T']];
+const DEMO_GROUPS = [{ name: 'INT-1', level: 'Intermediate', teacher: 'Mr. Jasur', schedule: 'Tue / Thu / Sat, 18:00–19:30', room: 'Room 1', fee: 750000 },
+  { name: 'ELEM-1', level: 'Elementary', teacher: 'Ms. Nigora', schedule: 'Mon / Wed / Fri, 16:00–17:30', room: 'Room 2', fee: 600000 }];
+const DEMO_STAFF = { TEACH1: { name: 'Mr. Jasur', role: 'teacher' }, ADMIN1: { name: 'School Admin', role: 'admin' } };
+const DEMO_LOG = {};   // studentId → lessons (newest first)
+DEMO_ROSTER.forEach((r, i) => {
+  const code = r[3];
+  DEMO_LOG[r[0]] = code ? DEMO_DB.students[code].lessons : demoLessons(11 + i * 7, r[2] === 'INT-1' ? [2, 4, 6] : [1, 3, 5], r[2] === 'INT-1' ? 18 : 16, { att: 0.9, late: 0.15, hw: 70 + i * 3, mark: 65 + i * 4 });
+});
+const DEMO_IND = [{ date: todayIso(2), studentId: 'ST-0008', name: 'Timur Rakhimov', start: '15:00', teacher: 'Mr. Jasur', status: '' }];
+const DEMO_REGS = [{ row: 2, submitted: '2026-10-30', status: 'new', studentName: 'Laylo Karimova', dob: '2015-06-02', age: 11, contactThrough: 'Parent',
+  studentPhone: '', studentTelegram: '', parentName: 'Feruza Karimova', parentRelation: 'Mother', parentPhone: '+998 90 222 44 66', parentTelegram: '@feruza_k',
+  level: "Don't know", goal: 'General English', days: 'Mon, Wed, Fri', time: 'Afternoon', source: 'Instagram', comment: 'Can she start this month?', studentId: '' }];
+let demoLinked = ['K7M2QX'], demoStaff = null, demoRegsMine = [];
+function demoMe() {
+  const students = demoLinked.map(k => DEMO_DB.students[k]).map(s => demoStudent(s, DEMO_LOG[s.id], s.stats.groupHomework, s.stats.groupMark, s.payments));
+  const groups = students.map(s => s.group.toLowerCase());
+  return { ok: true, school: DEMO_DB.school, students: students, isAdmin: !!(demoStaff && demoStaff.role === 'admin'), staff: demoStaff, registrations: demoRegsMine,
+    announcements: students.length ? DEMO_DB.announcements.filter(a => a.audience === 'All' || groups.includes(a.audience.toLowerCase())) : [] };
+}
+function demoGroupsFor(st) { return DEMO_GROUPS.filter(g => st.role === 'admin' || g.teacher === st.name); }
+function demoPayList() {
+  const out = [];
+  DEMO_ROSTER.forEach((r, i) => {
+    const g = DEMO_GROUPS.find(x => x.name === r[2]);
+    const day = [3, 20, 2, 8, 11, 5][i];
+    demoPayments(day, g.fee, i === 1 || i === 2).forEach((p, k) => out.push(Object.assign({ row: 10 + i * 3 + k, label: r[1] + ' · ' + r[0], name: r[1], id: r[0], group: r[2] }, p)));
+  });
+  return out;
+}
+let DEMO_PAY = null;
 function demoApi(action, extra) {
   return new Promise((resolve, reject) => setTimeout(() => {
-    const c = String(extra.code || '').toUpperCase().replace(/[\s-]/g, '');
-    if (action === 'link') {
-      if (!DEMO_DB.students[c]) return reject(codeErr('bad_code'));
-      if (!demoLinked.includes(c)) demoLinked.push(c);
+    try { resolve(demoHandle(action, extra)); } catch (e) { reject(e); }
+  }, 350));
+}
+function demoHandle(action, extra) {
+  const c = String(extra.code || '').toUpperCase().replace(/[\s-]/g, '');
+  DEMO_PAY = DEMO_PAY || demoPayList();
+  if (action === 'me') return demoMe();
+  if (action === 'link') {
+    if (DEMO_STAFF[c]) { demoStaff = DEMO_STAFF[c]; return Object.assign(demoMe(), { staffLinked: true }); }
+    if (!DEMO_DB.students[c]) throw codeErr('bad_code');
+    if (!demoLinked.includes(c)) demoLinked.push(c);
+    return Object.assign(demoMe(), { linkedStudentId: DEMO_DB.students[c].id });
+  }
+  if (action === 'unlink') { demoLinked = demoLinked.filter(k => DEMO_DB.students[k].id !== extra.studentId); return demoMe(); }
+  if (action === 'phone_login') { if (!demoLinked.includes('J6RV2T')) demoLinked.push('J6RV2T'); return Object.assign(demoMe(), { phoneLinked: { students: 1, staff: false } }); }
+  if (action === 'register') { demoRegsMine = [{ name: extra.form.studentName, status: 'new', submitted: todayIso() }]; return { ok: true, submitted: true, registrations: demoRegsMine }; }
+  const st = demoStaff;
+  if (!st) throw codeErr('forbidden');
+  const today = todayIso();
+  const lessonsOf = (gname, date) => DEMO_ROSTER.filter(r => r[2] === gname).map(r => {
+    const l = DEMO_LOG[r[0]].find(x => x.date === date);
+    return Object.assign({ studentId: r[0], name: r[1], status: '', start: '', arrival: '', homework: null, mark: null, comment: '', notified: false }, l || {}, { studentId: r[0], name: r[1] });
+  });
+  if (action === 'staff_home') {
+    const out = { ok: true, today, staff: st, groups: demoGroupsFor(st).map(g => Object.assign({}, g, { students: DEMO_ROSTER.filter(r => r[2] === g.name).length, lastLesson: DEMO_LOG[DEMO_ROSTER.find(r => r[2] === g.name)[0]][0].date })),
+      individual: { upcoming: DEMO_IND.filter(l => !l.status && (st.role === 'admin' || l.teacher === st.name)), recent: DEMO_IND.filter(l => l.status) } };
+    if (st.role === 'admin') {
+      const over = DEMO_PAY.filter(p => p.status === 'overdue');
+      out.kpis = { activeStudents: 6, attendance: 92, mark: 74, homework: 78, overdueCount: over.length, overdueSum: over.reduce((n, p) => n + p.amount, 0), dueToday: 0, newRegistrations: DEMO_REGS.filter(r => r.status === 'new').length };
     }
-    if (action === 'unlink') demoLinked = demoLinked.filter(k => DEMO_DB.students[k].id !== extra.studentId);
-    const students = demoLinked.map(k => DEMO_DB.students[k]);
-    const groups = students.map(s => s.group.toLowerCase());
-    const out = { ok: true, school: DEMO_DB.school, students: students,
-      announcements: students.length ? DEMO_DB.announcements.filter(a => a.audience === 'All' || groups.includes(a.audience.toLowerCase())) : [] };
-    if (action === 'link') out.linkedStudentId = DEMO_DB.students[c].id;
-    resolve(out);
-  }, 450));
+    return out;
+  }
+  if (action === 'group') {
+    const g = DEMO_GROUPS.find(x => x.name === extra.group);
+    const dates = {};
+    DEMO_ROSTER.filter(r => r[2] === g.name).forEach(r => DEMO_LOG[r[0]].forEach(l => { const o = dates[l.date] = dates[l.date] || { date: l.date, total: 0, marked: 0, absent: 0 }; o.total++; o.marked++; if (l.status === 'absent') o.absent++; }));
+    return { ok: true, today, group: g, students: DEMO_ROSTER.filter(r => r[2] === g.name).map(r => { const s = demoStats(DEMO_LOG[r[0]].slice(0, 12)); return { id: r[0], name: r[1], status: 'Active', attendance: s.attendanceRate, homework: s.homework, mark: s.mark, lastLesson: DEMO_LOG[r[0]][0].date }; }),
+      lessons: Object.values(dates).sort((a, b) => a.date < b.date ? 1 : -1).slice(0, 12) };
+  }
+  if (action === 'lesson_get') {
+    if (extra.group === 'Individual') {
+      const l = DEMO_IND.find(x => x.date === extra.date && x.studentId === extra.studentId) || {};
+      const r = DEMO_ROSTER.find(x => x[0] === extra.studentId);
+      return { ok: true, group: 'Individual', date: extra.date, start: l.start || '', teacher: l.teacher || st.name, exists: !!l.date, entries: [Object.assign({ studentId: r[0], name: r[1], status: '', arrival: '', homework: null, mark: null, comment: '' }, l)] };
+    }
+    const entries = lessonsOf(extra.group, extra.date);
+    return { ok: true, group: extra.group, date: extra.date, start: (entries.find(e => e.start) || {}).start || '', exists: entries.some(e => e.status), entries };
+  }
+  if (action === 'lesson_save') {
+    let alerts = 0;
+    if (extra.group === 'Individual') {
+      const e = extra.entries[0], r = DEMO_ROSTER.find(x => x[0] === e.studentId);
+      let l = DEMO_IND.find(x => x.date === extra.date && x.studentId === e.studentId);
+      if (!l) { l = { date: extra.date, studentId: e.studentId, name: r[1], teacher: st.name }; DEMO_IND.push(l); }
+      Object.assign(l, { start: extra.start, status: e.status, homework: e.homework, mark: e.mark, comment: e.comment });
+    } else {
+      extra.entries.forEach(e => {
+        if (!e.status) return;
+        const arr = DEMO_LOG[e.studentId];
+        let l = arr.find(x => x.date === extra.date);
+        if (e.status === 'absent' && extra.date === today && !(l && l.status === 'absent')) alerts++;
+        if (!l) { l = { date: extra.date }; arr.unshift(l); arr.sort((a, b) => a.date < b.date ? 1 : -1); }
+        Object.assign(l, { status: e.status, start: extra.start, arrival: e.arrival, homework: e.homework, mark: e.mark, comment: e.comment, minutesLate: null });
+      });
+    }
+    return Object.assign(demoHandle('lesson_get', extra), { saved: true, absenceAlerts: alerts });
+  }
+  if (action === 'ind_cancel') { const i = DEMO_IND.findIndex(x => x.date === extra.date && x.studentId === extra.studentId); if (i >= 0) DEMO_IND.splice(i, 1); return demoHandle('staff_home', {}); }
+  if (action === 'student_pick') return { ok: true, students: DEMO_ROSTER.map(r => ({ id: r[0], name: r[1], group: r[2] })) };
+  if (st.role !== 'admin') throw codeErr('forbidden');
+  if (action === 'students') return { ok: true, students: DEMO_ROSTER.map(r => { const ps = DEMO_PAY.filter(p => p.id === r[0]); return { id: r[0], name: r[1], group: r[2], status: 'Active', payment: ps.some(p => p.status === 'overdue') ? 'overdue' : ps.some(p => p.status === 'due_soon') ? 'due_soon' : 'ok', alert: '' }; }) };
+  if (action === 'student') {
+    const r = DEMO_ROSTER.find(x => x[0] === extra.studentId), g = DEMO_GROUPS.find(x => x.name === r[2]);
+    const s = demoStudent({ id: r[0], name: r[1], level: g.level, group: g.name, status: 'Active', startDate: '2026-09-01', comment: '', teacher: g.teacher, schedule: g.schedule, room: g.room },
+      DEMO_LOG[r[0]], 70, 72, DEMO_PAY.filter(p => p.id === r[0]));
+    s.contacts = { dob: '2011-03-14', age: '15', contactThrough: 'Parent', parentName: 'Parent of ' + r[1].split(' ')[0], parentRelation: 'Mother', parentPhone: '+998 90 123 45 67', parentTelegram: '@parent_demo', studentPhone: '', studentTelegram: '' };
+    s.accessCode = r[3] || 'X4DEMO'; s.linkedAccounts = r[3] ? 1 : 0; s.adminNotes = '';
+    return { ok: true, student: s };
+  }
+  if (action === 'payments') return { ok: true, today, overdue: DEMO_PAY.filter(p => p.status === 'overdue'), soon: DEMO_PAY.filter(p => ['due_today', 'due_soon', 'upcoming'].includes(p.status)), paid: DEMO_PAY.filter(p => p.status === 'paid').slice(0, 10) };
+  if (action === 'payment_mark') { const p = DEMO_PAY.find(x => x.row === extra.row); Object.assign(p, { status: 'paid', paid: true, paidOn: today, days: null }); return demoHandle('payments', {}); }
+  if (action === 'announce_preview') return { ok: true, recipients: extra.audience === 'All' ? 5 : 2 };
+  if (action === 'announce') { DEMO_DB.announcements.unshift({ date: today, title: extra.title, message: extra.message, audience: extra.audience }); return { ok: true, sent: extra.audience === 'All' ? 5 : 2, failed: 0 }; }
+  if (action === 'registrations') return { ok: true, groups: DEMO_GROUPS, registrations: DEMO_REGS };
+  if (action === 'registration_approve') { const r = DEMO_REGS.find(x => x.row === extra.row); r.status = 'approved'; r.studentId = 'ST-0011'; return Object.assign(demoHandle('registrations', {}), { approved: { studentId: 'ST-0011', code: 'Q7WD2K' } }); }
+  if (action === 'registration_reject' || action === 'registration_contacted') { const r = DEMO_REGS.find(x => x.row === extra.row); r.status = action === 'registration_reject' ? 'rejected' : 'contacted'; return demoHandle('registrations', {}); }
+  throw codeErr('bad_action');
 }
 
 /* ---------------- start ---------------- */
@@ -676,7 +1630,7 @@ if (IN_TELEGRAM) {
   try {
     tg.ready();
     tg.expand();
-    tg.BackButton.onClick(() => { state.view = 'dash'; state.error = null; render(); });
+    tg.BackButton.onClick(goBack);
   } catch (e) {}
 }
 render();
